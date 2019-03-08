@@ -2,4 +2,4 @@
 A group repository for an online booking system
 
 Wanmin Zhang
-I am good at sleeping in until 3PM and ignoring my responsibilities. 
+I am good at writing HTML. I also enjoy writing as well as copyediting.
