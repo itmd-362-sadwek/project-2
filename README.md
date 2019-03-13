@@ -6,3 +6,7 @@ I think my strenghts are definitely CSS and HTML, I like JS ut still don't feel 
 I believe some of my strengths include a CSS and JavaScript. I've also had a lot of experience in graphic design. I do Adobe Photoshop and calligraphy as well. I pay a lot of attention to small details and I'm also pretty good at writing and grammar. 
 ## Wanmin Zhang
 I am good at writing HTML. I also enjoy writing as well as copyediting.
+
+## Stive Tenorio
+I am somewhat good at writing in HTML and CSS, but I'm not that familiar with JS. I also have
+experience in using photo editing software including Photoshop and Gimp.
