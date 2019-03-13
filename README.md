@@ -6,3 +6,7 @@ I believe some of my strengths include a CSS and JavaScript. I've also had a lot
 
 Wanmin Zhang
 I am good at writing HTML. I also enjoy writing as well as copyediting.
+
+## Stive Tenorio
+I am somewhat good at writing in HTML and CSS, but I'm not that familiar with JS. I also have
+experience in using photo editing software including Photoshop and Gimp.
