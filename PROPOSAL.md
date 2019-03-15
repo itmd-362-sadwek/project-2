@@ -14,3 +14,6 @@ Dasha Day Hisoler: https://github.com/dashaday/project-2
 Kelly Perez: https://github.com/kdenisse29/project-2
 Stive Tenorio: https://github.com/stivet7/project-2
 Wanmin Zhang: https://github.com/wanminz/project-2
+
+## Project Management App
+We will be using Basecamp to communicate and keep track of our work.
