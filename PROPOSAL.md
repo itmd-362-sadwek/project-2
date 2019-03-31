@@ -1,10 +1,13 @@
 # SAD WEK
 
-## Group members:
+## Group Members
 Dasha Day Hisoler, Kelly Perez, Stive Tenorio and Wanmin Zhang
 
 ## Booking System
-We have decided to build a food delivery system. The user will be able to place orders for their food and have it delivered to their address.
+We have decided to build a food and drink delivery system for a cafe. The user
+will be able to place orders for their food and have it delivered to their
+address. We will only be focusing on one cafe. Our cafe will have items like
+pastries and bubble tea. 
 
 ## Shared Team GitHub Repo URL
 https://github.com/itmd-362-sadwek/project-2
