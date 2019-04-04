@@ -8,3 +8,42 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 /* stylelint-enable */
 
 /* set base html style for all pages */
+html {
+  background-color: ;
+  padding-right: ;
+  padding-left: ;
+  font-family: ;
+  font-size: ;
+}
+body {
+
+}
+li {
+
+}
+img {
+  width: 30%;
+  height: auto;
+  float: center;
+}
+footer {
+  padding-top: 0.5em;
+  font-size: 0.5em;
+}
+
+@media screen and (max-width: 800px) {
+  html {
+    font-size: 1em;
+  }
+  img {
+    width: 30%;
+  }
+}
+@media screen and (max-width: 1000px) {
+  html {
+    font-size: 1.1em;
+  }
+  img {
+    width: 35%;
+  }
+}
