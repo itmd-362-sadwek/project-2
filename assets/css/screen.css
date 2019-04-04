@@ -30,7 +30,27 @@ footer {
   padding-top: 0.5em;
   font-size: 0.5em;
 }
-
+#submenu {
+	    background: #fff9ed;
+	    height: 34px;
+	    margin: 20px 40px;
+	}
+	#submenu li {
+	    float: left;
+	    line-height: 1em;
+	    position: relative;
+	}
+	#submenu li a {
+	    color: #383838;
+	    display: block;
+	    font-size: 12px;
+	    font-weight: bold;
+	    line-height: 14px;
+	    margin: 0 0 0 19px;
+	    padding: 9px 18px 11px 24px;
+	    text-decoration: none;
+	    text-transform: uppercase;
+	}
 @media screen and (max-width: 800px) {
   html {
     font-size: 1em;
