@@ -32,22 +32,23 @@ footer {
 }
 #submenu {
 	    background: #fff9ed;
-	    height: 34px;
-	    margin: 20px 40px;
+	    height: 2.125em; /*34px*/
+	    margin: 1.250em 2.500em; /*20*/ /*40*/
 	}
 	#submenu li {
 	    float: left;
-	    line-height: 1em;
+	    line-height: 1em; /*16px*/
 	    position: relative;
 	}
 	#submenu li a {
 	    color: #383838;
 	    display: block;
-	    font-size: 12px;
+      font-family: ;
+	    font-size: 0.750em; /*12px*/
 	    font-weight: bold;
-	    line-height: 14px;
-	    margin: 0 0 0 19px;
-	    padding: 9px 18px 11px 24px;
+	    line-height: 0.875em; /*14px*/
+	    margin: 0em 0em 0em 1.188em; /*19px*/
+	    padding: 0.563em 1.125em 0.688em 1.500em; /*9px*/ /*18*/ /*11px*/ /*24px*/
 	    text-decoration: none;
 	    text-transform: uppercase;
 	}
