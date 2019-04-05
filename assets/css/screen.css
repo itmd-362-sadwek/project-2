@@ -30,6 +30,10 @@ footer {
   padding-top: 0.5em;
   font-size: 0.5em;
 }
+.top{
+  width: 15%;
+  height: auto;
+}
 #submenu {
 	    background: #fff9ed;
 	    height: 2.125em; /*34px*/
