@@ -8,3 +8,67 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 /* stylelint-enable */
 
 /* set base html style for all pages */
+html {
+  background-color: #fff7e6;
+  padding-right: ;
+  padding-left: ;
+  font-family: ;
+  font-size: ;
+}
+body {
+
+}
+li {
+
+}
+img {
+  width: 30%;
+  height: auto;
+  float: center;
+}
+footer {
+  padding-top: 0.5em;
+  font-size: 0.5em;
+}
+.top{
+  width: 15%;
+  height: auto;
+}
+#submenu {
+	    background: #fff9ed;
+	    height: 2.125em; /*34px*/
+	    margin: 1.250em 2.500em; /*20*/ /*40*/
+	}
+	#submenu li {
+	    float: left;
+	    line-height: 1em; /*16px*/
+	    position: relative;
+	}
+	#submenu li a {
+	    color: #383838;
+	    display: block;
+      font-family: ;
+	    font-size: 0.750em; /*12px*/
+	    font-weight: bold;
+	    line-height: 0.875em; /*14px*/
+	    margin: 0em 0em 0em 1.188em; /*19px*/
+	    padding: 0.563em 1.125em 0.688em 1.500em; /*9px*/ /*18*/ /*11px*/ /*24px*/
+	    text-decoration: none;
+	    text-transform: uppercase;
+	}
+@media screen and (max-width: 800px) {
+  html {
+    font-size: 1em;
+  }
+  img {
+    width: 30%;
+  }
+}
+@media screen and (max-width: 1000px) {
+  html {
+    font-size: 1.1em;
+  }
+  img {
+    width: 35%;
+  }
+}
