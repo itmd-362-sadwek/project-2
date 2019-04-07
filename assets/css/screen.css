@@ -84,10 +84,9 @@ footer {
   margin-bottom: 0.5em;
 }
 
-#drinks,
-#pastries {
+.pics {
   display: flex;
-  flex-wrap: wrap;
+  height: 20em;
 }
 
 @media screen and (max-width: 800px) {
