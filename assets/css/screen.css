@@ -16,11 +16,11 @@ h1 {
 
 html {
   background-color: #fff7e6;
+  margin: auto;
   padding-top: 3em;
-  padding-right: ;
-  padding-left: 5em;
   font-family: ;
   font-size: ;
+  width: 80%;
 }
 
 body {
