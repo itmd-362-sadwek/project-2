@@ -49,6 +49,10 @@ footer {
   flex-wrap: wrap;
 }
 
+.nav-list li {
+  padding: 0.7em;
+}
+
 #drinktitle,
 #pastrytitle {
   font-family: 'Unica One';
