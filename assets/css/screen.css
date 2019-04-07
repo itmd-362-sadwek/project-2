@@ -9,13 +9,18 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 /* stylelint-enable */
 
 /* set base html style for all pages */
+h1 {
+  font-size: 2.25em; /* 40.5px / 18px  = 2.25 */
+  line-height: 1.5em;
+}
+
 html {
   background-color: #fff7e6;
+  margin: auto;
   padding-top: 3em;
-  padding-right: ;
-  padding-left: 5em;
   font-family: ;
   font-size: ;
+  width: 80%;
 }
 
 body {
@@ -37,41 +42,21 @@ footer {
   font-size: 0.5em;
 }
 
-.top{
-  width: 15%;
-  height: auto;
+.nav-list {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
-#submenu {
-	    background: #fff9ed;
-	    height: 2.125em; /*34px*/
-	    margin: 1.250em 2.500em; /*20*/ /*40*/
-	}
-
-	#submenu li {
-	    float: left;
-	    line-height: 1em; /*16px*/
-	    position: relative;
-	}
-
-	#submenu li a {
-	    color: #383838;
-	    display: block;
-      font-family: ;
-	    font-size: 0.750em; /*12px*/
-	    font-weight: bold;
-	    line-height: 0.875em; /*14px*/
-	    margin: 0em 0em 0em 1.188em; /*19px*/
-	    padding: 0.563em 1.125em 0.688em 1.500em; /*9px*/ /*18*/ /*11px*/ /*24px*/
-	    text-decoration: none;
-	    text-transform: uppercase;
-	}
+.nav-list li {
+  padding: 0.7em;
+}
 
 #drinktitle,
 #pastrytitle {
   font-family: 'Unica One';
   font-size: 3em;
-}
 
 #desc {
   font-style: italic;
