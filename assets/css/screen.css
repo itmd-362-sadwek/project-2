@@ -67,6 +67,12 @@ footer {
 	    text-transform: uppercase;
 	}
 
+#drinktitle,
+#pastrytitle {
+  font-family: 'Unica One';
+  font-size: 3em;
+}
+
 @media screen and (max-width: 800px) {
   html {
     font-size: 1em;
