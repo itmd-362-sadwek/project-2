@@ -73,6 +73,23 @@ footer {
   font-size: 3em;
 }
 
+#desc {
+  font-style: italic;
+  margin-top: 0.5em;
+  margin-bottom: 2em;
+}
+
+#pastrytitle {
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+}
+
+#drinks,
+#pastries {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 @media screen and (max-width: 800px) {
   html {
     font-size: 1em;
