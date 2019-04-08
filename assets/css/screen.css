@@ -61,14 +61,14 @@ footer {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
 }
 
 .nav-list li {
   color: black;
   font-family: bahnschrift, Calibri, sans-serif;
   font-weight: lighter;
-  padding: 0.7em;
+  padding: 0.5em 0.7em;
 }
 
 #drinktitle,
