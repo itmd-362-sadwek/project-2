@@ -9,9 +9,17 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 /* stylelint-enable */
 
 /* set base html style for all pages */
+@font-face {
+  font-family: Domani;
+  src: url("../font/DomaniCP.otf") format("opentype");
+  font-style: normal;
+}
+
 h1 {
-  font-size: 2.25em; /* 40.5px / 18px  = 2.25 */
+  font-family: "Domani", Georgia, "Times New Roman", serif;
+  font-size: 4em; /* 72px / 18px  = 2.25 */
   line-height: 1.5em;
+  text-align: center;
 }
 
 html {
