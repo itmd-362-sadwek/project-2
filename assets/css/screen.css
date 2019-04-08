@@ -40,9 +40,8 @@ li {
 }
 
 img {
-  width: 30%;
-  height: auto;
-  float: center;
+  width: 100%;
+  display: block;
 }
 
 footer {
@@ -55,6 +54,7 @@ footer {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  margin-bottom: 1em;
 }
 
 .nav-list li {
@@ -65,6 +65,7 @@ footer {
 #pastrytitle {
   font-family: 'Unica One';
   font-size: 3em;
+}
 
 #desc {
   font-style: italic;
@@ -87,7 +88,6 @@ footer {
     font-size: 1em;
   }
   img {
-    width: 30%;
   }
 }
 @media screen and (max-width: 1000px) {
@@ -95,6 +95,5 @@ footer {
     font-size: 1.1em;
   }
   img {
-    width: 35%;
   }
 }
