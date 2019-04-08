@@ -28,7 +28,7 @@ h1 {
 }
 
 html {
-  background-color: #fff7e6;
+  background-color: #f7f2da;
   margin: auto;
   padding-top: 2em;
   font-size: 1.125em; /* 18px / 16px = 1.125em */
@@ -57,7 +57,7 @@ footer {
 }
 
 .nav-list {
-  background-color: white;
+  background-color: #cadd64;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
