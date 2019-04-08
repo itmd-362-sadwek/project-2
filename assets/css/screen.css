@@ -71,6 +71,12 @@ footer {
   font-size: 0.5em;
 }
 
+p {
+  background-color: #ffca3a;
+  margin: 0.5em 0;
+  padding: 0.5em;
+}
+
 .nav-list {
   background-color: #cadd64;
   display: flex;
