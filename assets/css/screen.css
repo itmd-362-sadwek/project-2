@@ -74,6 +74,7 @@ footer {
   height: 20em;
 }
 
+/* Change max-width to min-width */
 @media screen and (max-width: 800px) {
   html {
     font-size: 1em;
