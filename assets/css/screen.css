@@ -117,15 +117,25 @@ p {
   flex-wrap: wrap;
 }
 
-@media screen and (max-width: 800px) {
+.menu-list li {
+  margin: 0.25em 0;
+}
+
+@media screen and (min-width: 600px) {
   html {
   }
-  img {
+  .menu-list {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .menu-list li {
+    width: 45%;
   }
 }
-@media screen and (max-width: 1000px) {
+@media screen and (min-width: 900px) {
   html {
   }
-  img {
+  .menu-list li {
+    width: 30%;
   }
 }
