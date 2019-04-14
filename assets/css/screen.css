@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Unica+One');
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
@@ -9,17 +8,49 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 /* stylelint-enable */
 
 /* set base html style for all pages */
+a {
+  text-decoration: none;
+  color: #464646;
+}
+
+@font-face {
+  font-family: Santio;
+  src: url("../font/Santio-Regular.otf") format("opentype");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Domani;
+  src: url("../font/DomaniCP.otf") format("opentype");
+  font-style: normal;
+}
+
+@import url('https://v-fonts.com/fonts/bahnschrift');
+
 h1 {
-  font-size: 2.25em; /* 40.5px / 18px  = 2.25 */
+  font-family: "Domani", Georgia, "Times New Roman", serif;
+  font-size: 3.333333em; /* 60px / 18px  = 2.25 */
   line-height: 1.5em;
+  text-align: center;
+}
+
+h2 {
+  color: #fa8771;
+  /* background-color: white; */
+  font-family: "Santio", Calibri, Arial, sans-serif;
+  font-size: 2.666667em; /* 48px / 18px  = 2.25 */
+  line-height: 1.0em;
+  margin: 0.375em 0; /* 18px / 48px  = 0.375em */
 }
 
 html {
-  background-color: #fff7e6;
+  background-color: #f7f2da;
   margin: auto;
-  padding-top: 3em;
-  font-family: ;
-  font-size: ;
+  padding-top: 2em;
+  font-size: 1.125em; /* 18px / 16px = 1.125em */
+  line-height: 1.3em; /* 22px / 18px = 1.222... */
+  font-family: bahnschrift, Calibri, sans-serif;
+  font-weight: lighter;
   width: 80%;
 }
 
@@ -32,9 +63,8 @@ li {
 }
 
 img {
-  width: 30%;
-  height: auto;
-  float: center;
+  width: 100%;
+  display: block;
 }
 
 footer {
@@ -42,21 +72,32 @@ footer {
   font-size: 0.5em;
 }
 
+p {
+  border-left: 1em solid;
+  border-color: #ffca3a;
+  padding: 0.5em;
+}
+
 .nav-list {
-  background-color: white;
+  background-color: #cadd64;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  margin-bottom: 0.5em;
 }
 
 .nav-list li {
-  padding: 0.7em;
+  color: black;
+  font-family: bahnschrift, Calibri, sans-serif;
+  font-weight: lighter;
+  padding: 0.5em 0.7em;
 }
 
 #drinktitle,
 #pastrytitle {
   font-family: 'Unica One';
   font-size: 3em;
+}
 
 #desc {
   font-style: italic;
@@ -76,17 +117,13 @@ footer {
 
 @media screen and (max-width: 800px) {
   html {
-    font-size: 1em;
   }
   img {
-    width: 30%;
   }
 }
 @media screen and (max-width: 1000px) {
   html {
-    font-size: 1.1em;
   }
   img {
-    width: 35%;
   }
 }
