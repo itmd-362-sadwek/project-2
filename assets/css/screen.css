@@ -110,9 +110,11 @@ p {
   margin-bottom: 0.5em;
 }
 
-.pics {
+.menu-list {
+  align-items: left;
   display: flex;
-  height: 20em;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 @media screen and (max-width: 800px) {
