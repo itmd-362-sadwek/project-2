@@ -46,7 +46,7 @@ h2 {
 html {
   background-color: #f7f2da;
   margin: auto;
-  padding-top: 2em;
+  padding: 2em 0;
   font-size: 1.125em; /* 18px / 16px = 1.125em */
   line-height: 1.3em; /* 22px / 18px = 1.222... */
   font-family: bahnschrift, Calibri, sans-serif;
@@ -110,20 +110,32 @@ p {
   margin-bottom: 0.5em;
 }
 
-.pics {
+.menu-list {
+  align-items: left;
   display: flex;
-  height: 20em;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
-@media screen and (max-width: 800px) {
+.menu-list li {
+  margin: 0.25em 0;
+}
+
+@media screen and (min-width: 600px) {
   html {
   }
-  img {
+  .menu-list {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .menu-list li {
+    width: 45%;
   }
 }
-@media screen and (max-width: 1000px) {
+@media screen and (min-width: 900px) {
   html {
   }
-  img {
+  .menu-list li {
+    width: 30%;
   }
 }
