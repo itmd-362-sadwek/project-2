@@ -47,9 +47,9 @@ html {
   margin: auto;
   padding-top: 2em;
   font-size: 1.125em; /* 18px / 16px = 1.125em */
-  line-height: 1.222em; /* 22px / 18px = 1.222... */
-  font-family: ;
-  font-size: ;
+  line-height: 1.3em; /* 22px / 18px = 1.222... */
+  font-family: bahnschrift, Calibri, sans-serif;
+  font-weight: lighter;
   width: 80%;
 }
 
@@ -72,7 +72,8 @@ footer {
 }
 
 p {
-  background-color: #ffca3a;
+  border-left: 1em solid;
+  border-color: #ffca3a;
   margin: 0.5em 0;
   padding: 0.5em;
 }
