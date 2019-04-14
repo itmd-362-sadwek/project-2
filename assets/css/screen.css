@@ -40,6 +40,7 @@ h2 {
   font-family: "Santio", Calibri, Arial, sans-serif;
   font-size: 2.666667em; /* 48px / 18px  = 2.25 */
   line-height: 1.0em;
+  margin: 0.375em 0; /* 18px / 48px  = 0.375em */
 }
 
 html {
@@ -74,7 +75,6 @@ footer {
 p {
   border-left: 1em solid;
   border-color: #ffca3a;
-  margin: 0.5em 0;
   padding: 0.5em;
 }
 
