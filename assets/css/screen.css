@@ -43,6 +43,10 @@ h2 {
   margin: 0.375em 0; /* 18px / 48px  = 0.375em */
 }
 
+h3 {
+  grid-area: content;
+}
+
 html {
   background-color: #f7f2da;
   margin: auto;
@@ -54,9 +58,18 @@ html {
   width: 80%;
 }
 
-img {
-  width: 100%;
+.item-container {
+  background-color: pink;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "img content";
+  margin-bottom: 1em;
+}
+
+.item-image {
   display: block;
+  grid-area: img;
+  width: 100%;
 }
 
 footer {
