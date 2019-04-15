@@ -64,6 +64,7 @@ li {
 
 img {
   width: 100%;
+  height:50%;
   display: block;
 }
 
@@ -146,7 +147,7 @@ body {
   margin: 0; 
   padding: 0;
   background-color:#fff7e6 ;
-  height: 100%;
+  height: 50%;
 }
 .diy-slideshow{
   position: relative;
