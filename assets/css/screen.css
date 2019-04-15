@@ -54,14 +54,6 @@ html {
   width: 80%;
 }
 
-body {
-
-}
-
-li {
-
-}
-
 img {
   width: 100%;
   display: block;
@@ -93,21 +85,10 @@ p {
   padding: 0.5em 0.7em;
 }
 
-#drinktitle,
-#pastrytitle {
-  font-family: 'Unica One';
-  font-size: 3em;
-}
-
 #desc {
   font-style: italic;
   margin-top: 0.5em;
   margin-bottom: 2em;
-}
-
-#pastrytitle {
-  margin-top: 2em;
-  margin-bottom: 0.5em;
 }
 
 .menu-list {
