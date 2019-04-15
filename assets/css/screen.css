@@ -169,7 +169,7 @@ figure.show{
 .next, .prev{
   color: #fff;
   position: absolute;
-  background: rgba(0,0,0, .6);
+  background: rgba(0,0,0, .15);
   top: 50%;
   z-index: 1;
   font-size: 2em;
@@ -183,13 +183,13 @@ figure.show{
 }
 .next{
   right: 0;
-  padding: 10px 5px 15px 10px;
+  padding: 5px 5px 10px 5px;
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
 }
 .prev{
   left: 0;
-  padding: 10px 10px 15px 5px;
+  padding: 5px 5px 10px 5px;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
 }
