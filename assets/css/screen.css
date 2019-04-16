@@ -7,12 +7,7 @@
 a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}html,.reset{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
 /* stylelint-enable */
 
-/* set base html style for all pages */
-a {
-  text-decoration: none;
-  color: #464646;
-}
-
+/* import fonts */
 @font-face {
   font-family: Santio;
   src: url("../font/Santio-Regular.otf") format("opentype");
@@ -25,10 +20,16 @@ a {
   font-style: normal;
 }
 
-@import url('https://v-fonts.com/fonts/bahnschrift');
+@import url("https://v-fonts.com/fonts/bahnschrift");
+
+/* set base html style for all pages */
+a {
+  text-decoration: none;
+  color: #464646;
+}
 
 h1 {
-  font-family: "Domani", Georgia, "Times New Roman", serif;
+  font-family: Domani, Georgia, "Times New Roman", serif;
   font-size: 3.333333em; /* 60px / 18px  = 2.25 */
   line-height: 1.5em;
   text-align: center;
@@ -37,9 +38,9 @@ h1 {
 h2 {
   color: #fa8771;
   /* background-color: white; */
-  font-family: "Santio", Calibri, Arial, sans-serif;
+  font-family: Santio, Calibri, Arial, sans-serif;
   font-size: 2.666667em; /* 48px / 18px  = 2.25 */
-  line-height: 1.0em;
+  line-height: 1em;
   margin: 0.375em 0; /* 18px / 48px  = 0.375em */
 }
 
@@ -54,22 +55,14 @@ html {
   width: 80%;
 }
 
-body {
-
-}
-
-li {
-
-}
-
-img {
-  width: 100%;
-  display: block;
-}
-
 footer {
   padding-top: 0.5em;
   font-size: 0.5em;
+}
+
+img {
+  display: block;
+  width: 100%;
 }
 
 p {
@@ -78,6 +71,14 @@ p {
   padding: 0.5em;
 }
 
+#desc {
+  font-style: italic;
+  margin-top: 0.5em;
+  margin-bottom: 2em;
+}
+
+/* NAVBAR stylings */
+/* container */
 .nav-list {
   background-color: #cadd64;
   display: flex;
@@ -86,6 +87,7 @@ p {
   margin-bottom: 0.5em;
 }
 
+/* individual links */
 .nav-list li {
   color: black;
   font-family: bahnschrift, Calibri, sans-serif;
@@ -93,23 +95,8 @@ p {
   padding: 0.5em 0.7em;
 }
 
-#drinktitle,
-#pastrytitle {
-  font-family: 'Unica One';
-  font-size: 3em;
-}
-
-#desc {
-  font-style: italic;
-  margin-top: 0.5em;
-  margin-bottom: 2em;
-}
-
-#pastrytitle {
-  margin-top: 2em;
-  margin-bottom: 0.5em;
-}
-
+/* MENU: list of items stylings */
+/* the whole list of items */
 .menu-list {
   align-items: left;
   display: flex;
@@ -117,13 +104,69 @@ p {
   flex-wrap: wrap;
 }
 
-.menu-list li {
-  margin: 0.25em 0;
+/* container for image and item information */
+.item-container {
+  /* background-color: pink; */
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  grid-template-areas: "img content";
+  margin-bottom: 2em;
 }
 
+/* container for item information */
+.item-content {
+  grid-area: content;
+  margin-left: 0.5em;
+  position: relative;
+}
+
+/* item name */
+.item-content h3 {
+  color: #fa8771;
+  font-weight: 400;
+  font-size: 1.666667em; /* 30px / 18px  = 1.666667*/
+  line-height: 1.1em;
+}
+
+/* removes padding and border styling from p */
+.item-content p {
+  padding: 0;
+  border: none;
+}
+
+/* item price */
+.item-price {
+  color: #92ad00;
+  font-stretch: semi-condensed;
+  font-size: 1.3333333em; /* 24px / 18px  = 1.3333333*/
+  font-weight: 350;
+  line-height: 1.1em;
+}
+
+/* item description */
+.item-desc {
+  margin: 1em 0;
+}
+
+/* add to order button */
+.order-btn {
+  background-color: #ffca3a;
+  border-radius: 1.5em;
+  margin-top: 3em;
+  padding: 0.5em 0.75em;
+  position: absolute;
+  bottom: 0;
+}
+
+/* item image */
+.item-image {
+  display: block;
+  grid-area: img;
+  width: 100%;
+}
+
+/* State Styles */
 @media screen and (min-width: 600px) {
-  html {
-  }
   .menu-list {
     flex-direction: row;
     justify-content: space-between;
@@ -133,8 +176,6 @@ p {
   }
 }
 @media screen and (min-width: 900px) {
-  html {
-  }
   .menu-list li {
     width: 30%;
   }
