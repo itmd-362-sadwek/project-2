@@ -40,7 +40,7 @@ h2 {
   /* background-color: white; */
   font-family: Santio, Calibri, Arial, sans-serif;
   font-size: 2.666667em; /* 48px / 18px  = 2.25 */
-  line-height: 1.0em;
+  line-height: 1em;
   margin: 0.375em 0; /* 18px / 48px  = 0.375em */
 }
 
@@ -125,7 +125,7 @@ p {
   color: #fa8771;
   font-weight: 400;
   font-size: 1.666667em; /* 30px / 18px  = 1.666667*/
-  line-height: 1.10em;
+  line-height: 1.1em;
 }
 
 /* removes padding and border styling from p */
@@ -140,7 +140,7 @@ p {
   font-stretch: semi-condensed;
   font-size: 1.3333333em; /* 24px / 18px  = 1.3333333*/
   font-weight: 350;
-  line-height: 1.10em;
+  line-height: 1.1em;
 }
 
 /* item description */
