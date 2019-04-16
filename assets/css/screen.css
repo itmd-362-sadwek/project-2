@@ -68,9 +68,22 @@ html {
 }
 
 .item-content h3 {
+  color: #fa8771;
   font-weight: 350;
-  font-size: 1.333333em; /* 30px / 18px  = 2*/
+  font-size: 1.5em; /* 36px / 18px  = 2*/
   line-height: 1.10em;
+}
+
+.item-content p {
+  padding: 0;
+  border: none;
+}
+
+.order-btn {
+  background-color: #ffca3a;
+  border-radius: 1em;
+  margin-top: 3em;
+  padding: 0.5em;
 }
 
 .item-image {
