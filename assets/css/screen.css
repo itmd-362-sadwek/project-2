@@ -65,6 +65,7 @@ html {
 .item-content {
   grid-area: content;
   margin-left: 0.5em;
+  position: relative;
 }
 
 .item-content h3 {
@@ -84,6 +85,8 @@ html {
   border-radius: 1em;
   margin-top: 3em;
   padding: 0.5em;
+  position: absolute;
+  bottom: 0;
 }
 
 .item-image {
