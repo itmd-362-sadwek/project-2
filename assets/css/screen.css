@@ -80,6 +80,14 @@ html {
   border: none;
 }
 
+.item-price {
+  color: #92ad00;
+  font-stretch: semi-condensed;
+  font-size: 1.3333333em; /* 24px / 18px  = 1.3333333*/
+  font-weight: 350;
+  line-height: 1.10em;
+}
+
 .item-desc {
   margin: 1em 0;
 }
