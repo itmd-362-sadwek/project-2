@@ -112,6 +112,11 @@ footer {
   font-size: 0.5em;
 }
 
+img {
+  display: block;
+  width: 100%;
+}
+
 p {
   border-left: 1em solid;
   border-color: #ffca3a;
