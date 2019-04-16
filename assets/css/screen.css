@@ -20,7 +20,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
   font-style: normal;
 }
 
-@import url('https://v-fonts.com/fonts/bahnschrift');
+@import url("https://v-fonts.com/fonts/bahnschrift");
 
 /* set base html style for all pages */
 a {
@@ -78,6 +78,7 @@ p {
 }
 
 /* NAVBAR stylings */
+/* container */
 .nav-list {
   background-color: #cadd64;
   display: flex;
@@ -86,6 +87,7 @@ p {
   margin-bottom: 0.5em;
 }
 
+/* individual links */
 .nav-list li {
   color: black;
   font-family: bahnschrift, Calibri, sans-serif;
@@ -94,6 +96,7 @@ p {
 }
 
 /* MENU: list of items stylings */
+/* the whole list of items */
 .menu-list {
   align-items: left;
   display: flex;
@@ -101,6 +104,7 @@ p {
   flex-wrap: wrap;
 }
 
+/* container for image and item information */
 .item-container {
   /* background-color: pink; */
   display: grid;
@@ -109,12 +113,14 @@ p {
   margin-bottom: 2em;
 }
 
+/* container for item information */
 .item-content {
   grid-area: content;
   margin-left: 0.5em;
   position: relative;
 }
 
+/* item name */
 .item-content h3 {
   color: #fa8771;
   font-weight: 400;
@@ -122,11 +128,13 @@ p {
   line-height: 1.10em;
 }
 
+/* removes padding and border styling from p */
 .item-content p {
   padding: 0;
   border: none;
 }
 
+/* item price */
 .item-price {
   color: #92ad00;
   font-stretch: semi-condensed;
@@ -135,10 +143,12 @@ p {
   line-height: 1.10em;
 }
 
+/* item description */
 .item-desc {
   margin: 1em 0;
 }
 
+/* add to order button */
 .order-btn {
   background-color: #ffca3a;
   border-radius: 1.5em;
@@ -148,6 +158,7 @@ p {
   bottom: 0;
 }
 
+/* item image */
 .item-image {
   display: block;
   grid-area: img;
