@@ -167,8 +167,6 @@ p {
 
 /* State Styles */
 @media screen and (min-width: 600px) {
-  html {
-  }
   .menu-list {
     flex-direction: row;
     justify-content: space-between;
@@ -178,8 +176,6 @@ p {
   }
 }
 @media screen and (min-width: 900px) {
-  html {
-  }
   .menu-list li {
     width: 30%;
   }
