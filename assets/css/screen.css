@@ -59,7 +59,7 @@ html {
   display: grid;
   grid-template-columns: 2fr 3fr;
   grid-template-areas: "img content";
-  margin-bottom: 1em;
+  margin-bottom: 2em;
 }
 
 .item-content {
@@ -144,10 +144,6 @@ p {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-}
-
-.menu-list li {
-  margin: 0.25em 0;
 }
 
 @media screen and (min-width: 600px) {
