@@ -55,7 +55,7 @@ html {
 }
 
 .item-container {
-  background-color: pink;
+  /* background-color: pink; */
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas: "img content";
@@ -80,11 +80,15 @@ html {
   border: none;
 }
 
+.item-desc {
+  margin: 1em 0;
+}
+
 .order-btn {
   background-color: #ffca3a;
-  border-radius: 1em;
+  border-radius: 1.5em;
   margin-top: 3em;
-  padding: 0.5em;
+  padding: 0.75em;
   position: absolute;
   bottom: 0;
 }
