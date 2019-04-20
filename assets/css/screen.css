@@ -85,7 +85,7 @@ p {
   flex-direction: row;
   flex-wrap: wrap;
   margin-bottom: 0.5em;
-  
+  justify-content: center;
 }
 
 /* individual links */
