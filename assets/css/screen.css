@@ -190,12 +190,22 @@ p {
     flex-direction: row;
     justify-content: space-between;
   }
-  .menu-list li {
+  .item-container {
+    display: flex;
+    flex-direction: column-reverse;
     width: 45%;
+  }
+  .item-content {
+    margin: 0;
+    padding-top: 1em;
+  }
+  .order-btn {
+    position: relative;
   }
 }
 @media screen and (min-width: 900px) {
-  .menu-list li {
+  .item-container {
+    /* display: block; */
     width: 30%;
   }
 }
