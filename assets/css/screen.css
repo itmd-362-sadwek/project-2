@@ -185,7 +185,7 @@ p {
 }
 
 /* State Styles */
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 700px) {
   .menu-list {
     flex-direction: row;
     justify-content: space-between;
