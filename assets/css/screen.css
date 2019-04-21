@@ -184,33 +184,10 @@ p {
 
 /*cart */
 
-.wrap {
-  width: 75%;
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 5% 0;
-  margin-bottom: 5em;
+.cartheading{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 0.5em;
+  justify-content: left;
 }
-.heading {
-  padding: 1em 0;
-  border-bottom: 1px solid #D0D0D0;
- h1 {
-   font-family: $fontSerif;
-   font-size: 2em;
-   float: left;
-  }
-  a.continue {
-    &:link , &:visited {
-      text-decoration: none;
-      font-family: $fontSans;
-      letter-spacing: -.015em;
-      font-size: .75em;
-      padding: 1em;
-      color: #fff;
-      background: #82ca9c;
-      font-weight: bold;
-      border-radius: 50px;
-    float: right;
-      text-align: right;
-       @include transition(all, .25s, linear);
-    }
