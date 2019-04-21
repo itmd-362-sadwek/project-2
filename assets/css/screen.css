@@ -137,6 +137,7 @@ p {
 /* item price */
 .item-price {
   color: #92ad00;
+  display: block;
   font-stretch: semi-condensed;
   font-size: 1.3333333em; /* 24px / 18px  = 1.3333333*/
   font-weight: 350;
@@ -145,6 +146,7 @@ p {
 
 /* item description */
 .item-desc {
+  display: block;
   margin: 1em 0;
 }
 
