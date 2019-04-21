@@ -191,3 +191,40 @@ p {
   margin-bottom: 0.5em;
   justify-content: left;
 }
+.shopping-cart {
+  margin-top: 15px;
+}
+/* Column headers */
+.column-labels {
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid $color-border;
+    padding: 0.5em 0.7em;
+}
+  }
+  
+.product-image{
+  padding: 0.5em 0.7em;
+  float: left; 
+  width: 20%;
+}
+.product-price{
+  padding: 0.5em 0.7em;
+  float: left; 
+  width: 12%; }
+
+}
+.product-removal {
+  width: auto;
+}
+.product-line-price{
+  padding: 0.5em 0.7em;
+  float: left; 
+  width: 12%;
+  text-align: right;
+}
+.product-quantity{
+  padding: 0.5em 0.7em;
+  float: left; 
+  width: 70px;
+}
