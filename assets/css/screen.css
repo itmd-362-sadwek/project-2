@@ -157,7 +157,24 @@ p {
   position: absolute;
   bottom: 0;
 }
-
+/*remove button */
+.remove-btn {
+  background-color: #ffca3a;
+  border-radius: 1.5em;
+  margin-top: 3em;
+  padding: 0.5em 0.75em;
+  position: absolute;
+  bottom: 0;
+}
+/* checkout button */
+.checkout-btn {
+  background-color: #ffca3a;
+  border-radius: 1.5em;
+  margin-top: 3em;
+  padding: 0.5em 0.75em;
+  position: absolute;
+  bottom: 0;
+}
 /* item image */
 .item-image {
   display: block;
