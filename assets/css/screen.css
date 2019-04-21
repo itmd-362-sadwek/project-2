@@ -216,7 +216,7 @@ p {
 }
 .product-removal {
   width: auto;
-}
+  }
 .product-line-price{
   padding: 0.5em 0.7em;
   float: left; 
@@ -228,3 +228,23 @@ p {
   float: left; 
   width: 70px;
 }
+/* Product entries */
+.product {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid $color-border;}
+  
+  .remove-product {
+    border: 0;
+    padding: 4px 8px;
+    background-color: #c66;
+    color: #fff;
+    font-family: $font-bold;
+    font-size: 12px;
+    border-radius: 3px;
+  }
+  
+  .remove-product:hover {
+    background-color: #a44;
+  }
+  }
