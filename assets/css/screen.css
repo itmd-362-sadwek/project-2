@@ -183,7 +183,10 @@ p {
 }
 
 /*cart */
-
+/* Apply dollar signs */
+.product .product-price:before, .product .product-line-price:before, .totals-value:before {
+  content: '$';
+}
 .cartheading{
   display: flex;
   flex-direction: row;
@@ -204,9 +207,9 @@ p {
   }
   
 .product-image{
-  padding: 0.5em 0.7em;
   float: left; 
   width: 20%;
+  height:15px;
 }
 .product-price{
   padding: 0.5em 0.7em;
@@ -216,10 +219,11 @@ p {
 }
 .product-removal {
   width: auto;
+  float:right;
   }
 .product-line-price{
   padding: 0.5em 0.7em;
-  float: left; 
+  justify-content: left; 
   width: 12%;
   text-align: right;
 }
@@ -243,8 +247,12 @@ p {
     font-size: 12px;
     border-radius: 3px;
   }
+
   
   .remove-product:hover {
     background-color: #a44;
   }
+  .product-line-price {
+    float:right;
+    width: auto;
   }
