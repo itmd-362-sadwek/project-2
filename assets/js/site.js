@@ -283,9 +283,7 @@ if (document.querySelector('#drinks')) {
     var button = event.target;
     if (button.className == 'order-btn'){
       event.preventDefault();
-      // displayCard(event.target);
-      var card = document.querySelector('#overlay');
-      card.classList.toggle('visible');
+      toggleCard();
     }
   });
 }
@@ -295,9 +293,14 @@ if (document.querySelector('#overlay')) {
   overlay.addEventListener('click',function(event){
     // Select the necessary elements from the DOM
     var areaClicked = event.target;
-    if (areaClicked == overlay){
-      var card = document.querySelector('#overlay');
-      card.classList.toggle('visible');
-    }
+    if (areaClicked == overlay)
+      toggleCard();
   });
+}
+
+function toggleCard() {
+  var card = document.querySelector('#overlay');
+  card.classList.toggle('visible');
+  var page = document.querySelector('body');
+  page.classList.toggle('disable-scroll');
 }
