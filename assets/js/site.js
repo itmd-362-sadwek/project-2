@@ -151,6 +151,15 @@ if ('fetch' in window) {
   });
 }
 
+// Listen for click events on confirm button and submit when clicked
+orderForm.confirmButton.addEventListener('click', function(event) {
+  // Confirm the order form
+  event.preventDefault();
+  orderForm.confirmButton.click();
+})
+// NOTE: END OF JAVASCRIPT FOR CHECKOUT PAGE
+
+
 var cartItems = localStorage.getItem('item-title', 'item-price', 'item-image', 'order-btn');
 
 cartItems.push(newItem);
