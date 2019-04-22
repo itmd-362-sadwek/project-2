@@ -5,7 +5,6 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
   <link rel="stylesheet" href="../assets/css/screen.css" />
-  <script src="../assets/js/site.js"></script>
 </head>
 <body>
   <header id="header">
@@ -26,7 +25,7 @@
     <section class="column-labels">
       <label class="product-image">Image</label>
       <label class="product-price">Price</label>
-      <label class="product-details">Product</label>
+      <label class="product-details">Product</label>d
       <label class="product-quantity">Quantity</label>
       <label class="product-removal">Remove</label>
       <label class="product-line-price">Total</label>
@@ -34,21 +33,44 @@
 
     <section class="product">
     <section class="product-image">
-      <img src= "assets/img/class-mt.jpg">
+      <img src= "../assets/img/class-mt.jpg">
 
-    <section class="product-title"> ""</section>
+    <section class="product-title"> Classic Milk Tea</section>
     </section>
-<section class="product-price">Classic Milk Tea</section>
-<section class="product-quantity">
-<input type="number" value="0" min="1" max="10">
-</section>
-<section class="product-removal">
- <button class="remove-product">
-        Remove
- </button>
- </section>
- <section class="product-line-price">25.98</section>
-<a href="../menu/index.html" class="button">Continue Shopping</a>   </main>
-  </form>
+
+    <section class="product-price">4.50</section>
+    <section class="product-quantity">
+      <input type="number" value="0" min="1" max="10">
+    </section>
+    <section class="product-removal">
+      <button class="remove-product"> Remove </button>
+    </section>
+    <section class="product-line-price">4.25</section>
+
+   <a href="../menu/index.html" class="button">Continue Shopping</a>  
+
+   <section class="totals">
+    <section class="totals-item">
+      <label>Subtotal</label>
+      <section class="totals-value" id="cart-subtotal"></section>
+    </section>
+    <section class="totals-item">
+      <label>Tax (5%)</label>
+      <section class="totals-value" id="cart-tax"></section>
+    </section>
+    <section class="totals-item">
+      <label >Shipping</label>
+      <section class="totals-value" id="cart-shipping"></section>
+    </section>
+    <section class="totals-item totals-item-total">
+      <label>Grand Total</label>
+      <section class="totals-value" id="cart-total"></section>
+    </section>
+
+    <button class="checkout">Checkout</button>
+  </section> 
+  </main>
+    <script src="../assets/js/site.js"></script>
+
 </body>
 </html>

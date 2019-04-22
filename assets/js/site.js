@@ -3,8 +3,6 @@
 var html = document.querySelector('html');
 html.classList.remove('nojs');
 html.classList.add('js');
-
-//cart
 /* Set rates + misc */
 var taxRate = 0.05;
 var shippingRate = 15.00; 
