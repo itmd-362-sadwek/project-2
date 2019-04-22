@@ -85,6 +85,14 @@ document.addEventListener('DOMContentLoaded', function() {
     state: order.form.querySelector('state')
   };
 
+  // Focus on user landed input textboxes
+  name.addEventListener('focus', function(){});
+  contact.addEventListener('focus', function(){});
+  address.addEventListener('focus', function(){});
+  zipcode.addEventListener('focus', function(){});
+  city.addEventListener('focus', function(){});
+  state.addEventListener('focus', function(){});
+
 var cartItems = localStorage.getItem('item-title', 'item-price', 'item-image', 'order-btn');
 
 cartItems.push(newItem);
