@@ -200,7 +200,6 @@ p {
     margin-bottom: 15px;
     border-bottom: 1px solid $color-border;
     padding: 0.5em 0.7em;
-}
   }
   
 .product-image{
@@ -216,8 +215,7 @@ p {
 
 }
 .product-removal {
-  width: auto;
-  float:right;
+  float:center;
   }
 .product-line-price{
   padding: 0.5em 0.7em;
@@ -238,7 +236,9 @@ p {
   
   .remove-product {
     border: 0;
-    padding: 4px 8px;
+    padding: 4px 9px;
+    margin-top: 10px;
+    margin-bottom:10px;
     background-color: #c66;
     color: #fff;
     font-family: $font-bold;
@@ -249,8 +249,27 @@ p {
   
   .remove-product:hover {
     background-color: #a44;
-    text-align: center;
   }
   .product-line-price {
     float:right;
+    margin-bottom: -10px;
   }
+  a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    justify-content: left;
+    border: 0;
+    margin-top: 10px;
+    padding: 6px 25px;
+  background-color: grey;
+  color: black;
+  font-size: 15px;
+  border-radius: 3px;
+}
+.a button:hover {
+  background-color: #494;
+}
+/* Apply dollar signs */
+.product .product-price:before, .product .product-line-price:before, .totals-value:before {
+  content: '$';
+}
