@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
     help.innerHTML += ' <b id="err"></b>';
   };
 
-  var location = {}; {
+  var location = {
     address: order.orderForm.querySelector('#addy'),
     zipcode: order.orderForm.querySelector('#zip'),
     city: order.orderForm.querySelector('#city'),
