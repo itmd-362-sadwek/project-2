@@ -111,7 +111,7 @@ p {
   display: grid;
   grid-template-columns: 2fr 3fr;
   grid-template-areas: "img content";
-  margin-bottom: 2em;
+  margin-bottom: 1em;
 }
 
 /* container for item information */
@@ -183,6 +183,20 @@ p {
   display: block;
   grid-area: img;
   width: 100%;
+}
+
+/* Customize Item Card */
+/* card container */
+.customize-card {
+  background-color: pink;
+  margin-bottom: 1em;
+  width: 100%;
+}
+
+/* form input styling */
+input[type='checkbox'],
+input[type='radio'] {
+  display: none;
 }
 
 /* State Styles */
