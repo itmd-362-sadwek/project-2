@@ -5,6 +5,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
   <link rel="stylesheet" href="../assets/css/screen.css" />
+
   <script src="../assets/js/site.js" async></script>
 </head>
 <body>
@@ -16,24 +17,64 @@
         <li><a href="../menu/index.html">Menu</a></li>
         <li><a href="../cart/index.html">Cart</a></li>
       </ul>
-    </nav>
+    </nav> 
   </header>
   <main>
-    <section class="container content-section">
-        <h2 class="section-header">CART</h2>
-        <div class="cart-row">
-            <span class="cart-item cart-header cart-column">ITEM</span>
-            <span class="cart-price cart-header cart-column">PRICE</span>
-            <span class="cart-quantity cart-header cart-column">QUANTITY</span>
-        </div>
-        <div class="cart-items">
-        </div>
-        <div class="cart-total">
-            <strong class="cart-total-title">Total</strong>
-            <span class="cart-total-price">$0</span>
-        </div>
-           <a href="../checkout/index.html" class="checkout-btn" type="button">CHECKOUT</a>
-</section>
+      <section class="cartheading">
+      <h2>My Cart</h2>
+
+    </section>
+    <section class="shopping-cart">
+    <section class="column-labels">
+      <label class="product-image">Image</label>
+      <label class="product-price">Price</label>
+      <label class="product-quantity">Quantity</label>
+      <label class="product-removal">Remove</label>
+      <label class="product-line-price">Total</label>
+    </section>
+
+    <section class="product">
+    <section class="product-image">
+      <img src= "../assets/img/class-mt.jpg">
+ <p> Classic Milk Tea</p>
+
+    </section>
+
+    <section class="product-price">4.50</section>
+    <section class="product-quantity">
+      <input type="number" value="0" min="1" max="10">
+    </section>
+    <section class="product-removal">
+      <button class="remove-product"> Remove </button>
+    </section>
+    <section class="product-line-price">4.25</section>
+
+   
+
+   <section class="totals">
+    <section class="totals-item">
+      <a href="../menu/index.html" class="button">Continue Shopping</a>  
+      <label>Subtotal</label>
+      <section class="totals-value" id="cart-subtotal"></section>
+    </section>
+    <section class="totals-item">
+      <label>Tax (5%)</label>
+      <section class="totals-value" id="cart-tax"></section>
+    </section>
+    <section class="totals-item">
+      <label >Shipping</label>
+      <section class="totals-value" id="cart-shipping"></section>
+    </section>
+    <section class="totals-item totals-item-total">
+      <label>Grand Total</label>
+      <section class="totals-value" id="cart-total"></section>
+    </section>
+
+    <a href="../checkout/index.html" type="button" class="checkout">Checkout</a>
+  </section> 
+ 
   </main>
+    <script src="../assets/js/site.js"></script>
+
 </body>
 </html>
