@@ -118,6 +118,18 @@ if (document.querySelector('#drinks')) {
   });
 }
 
+if (document.querySelector('#overlay')) {
+  var overlay = document.querySelector('#overlay');
+  overlay.addEventListener('click',function(event){
+    // Select the necessary elements from the DOM
+    var areaClicked = event.target;
+    if (areaClicked == overlay){
+      var card = document.querySelector('#overlay');
+      card.classList.toggle('visible');
+    }
+  });
+}
+
 function displayCard (button) {
   // parentContainer = li.item-container
   let parentContainer = button.parentElement.parentElement.parentElement;
