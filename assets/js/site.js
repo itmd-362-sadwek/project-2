@@ -169,7 +169,10 @@ cartItems.push(newItem);
 
 localStorage.setItem('item-title', 'item-price', 'item-image', 'order-btn', 'order-btn', cartItems);
 
+var cart = {};
+cart.products = [];
 
+localStorage.setItem('cart', JSON.stringify(cart));
 $('order-btn').on('click', function(e) {
     var li = $(this).parent();
 
