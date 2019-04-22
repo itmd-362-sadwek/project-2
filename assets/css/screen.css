@@ -187,12 +187,19 @@ p {
 
 /* Customize Item Card */
 /* card container */
+body.disable-scroll {
+  position: absolute;
+  overflow: hidden;
+}
+
 #overlay {
   display: none;
   left: 0;
   top: 0;
+  overflow-y: scroll;
   width: 100%;
   height: 100%;
+  padding-top: 2em;
   position: fixed;
   background-color: rgba(255,255,255,0.7);
 }
@@ -202,28 +209,30 @@ p {
 }
 
 .customize-card {
-  background-color: pink;
+  background-color: #fa8771;
+  border-radius: 1em;
   display: block;
   margin: auto;
-  top: 50%;
-  transform: translateY(50%);
-  width: 80%;
+  padding: 1em;
+  width: 70%;
   z-index: 2;
 }
 
 .customize-option {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   /* justify-content: space-around; */
   margin: 0.5em;
 }
 
 .customize-option li {
+  background-color: rgba(255,255,255,0.7);
   border: 0.25em solid;
-  border-color: #fa8771;
+  border-color: white;
   border-radius: 1.5em;
   margin: 0 0.25em;
   padding: 0.5em 0.75em;
+  text-align: center;
 }
 
 /* form input styling */
