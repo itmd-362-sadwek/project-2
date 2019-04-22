@@ -5,10 +5,9 @@ html.classList.remove('nojs');
 html.classList.add('js');
 /* Set rates + misc */
 var taxRate = 0.05;
-var shippingRate = 15.00; 
+var shippingRate = 15.00;
 var fadeTime = 300;
 
-<<<<<<< HEAD
 
 /* Assign actions */
 $('.product-quantity input').change( function() {
@@ -24,17 +23,17 @@ $('.product-removal button').click( function() {
 function recalculateCart()
 {
   var subtotal = 0;
-  
+
   /* Sum up row totals */
   $('.product').each(function () {
     subtotal += parseFloat($(this).children('.product-line-price').text());
   });
-  
+
   /* Calculate totals */
   var tax = subtotal * taxRate;
   var shipping = (subtotal > 0 ? shippingRate : 0);
   var total = subtotal + tax + shipping;
-  
+
   /* Update totals display */
   $('.totals-value').fadeOut(fadeTime, function() {
     $('#cart-subtotal').html(subtotal.toFixed(2));
@@ -59,7 +58,7 @@ function updateQuantity(quantityInput)
   var price = parseFloat(productRow.children('.product-price').text());
   var quantity = $(quantityInput).val();
   var linePrice = price * quantity;
-  
+
   /* Update line price display and recalc cart totals */
   productRow.children('.product-line-price').each(function () {
     $(this).fadeOut(fadeTime, function() {
@@ -67,7 +66,7 @@ function updateQuantity(quantityInput)
       recalculateCart();
       $(this).fadeIn(fadeTime);
     });
-  });  
+  });
 }
 
 
@@ -81,7 +80,7 @@ function removeItem(removeButton)
     recalculateCart();
   });
 }
-=======
+
 // Check if browser can run Javascript
 if (document.readyState == 'loading') {
     document.addEventListener('DOMContentLoaded', ready)
@@ -117,11 +116,11 @@ function validate(value, check, condition {
   if (eq(typeof(check.test), 'function')) {
     // Check regular expression
     return check.test(value);
-  } 
+  }
   else if (eq(typeof(check), 'function')) {
     // Check comparison function
     return check(value, condition);
-  } 
+  }
   else {
     return false;
   }
@@ -284,5 +283,34 @@ function addToCart(product) {
     }
 }
 
-//End of cart functions
->>>>>>> b5e0ec210c737825c5a4e16e0a351b64291988fb
+class Item {
+  constructor(button) {
+    this.name = button.getAttribute('value');
+  }
+}
+
+if (document.querySelector('#drinks')) {
+  var drinksMenu = document.querySelector('#drinks');
+  drinksMenu.addEventListener('click',function(event){
+    // Select the necessary elements from the DOM
+    var button = event.target;
+    if (button.className == 'order-btn'){
+      event.preventDefault();
+      // displayCard(event.target);
+      var card = document.querySelector('#overlay');
+      card.classList.toggle('visible');
+    }
+  });
+}
+
+if (document.querySelector('#overlay')) {
+  var overlay = document.querySelector('#overlay');
+  overlay.addEventListener('click',function(event){
+    // Select the necessary elements from the DOM
+    var areaClicked = event.target;
+    if (areaClicked == overlay){
+      var card = document.querySelector('#overlay');
+      card.classList.toggle('visible');
+    }
+  });
+}

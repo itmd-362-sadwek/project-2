@@ -111,7 +111,7 @@ p {
   display: grid;
   grid-template-columns: 2fr 3fr;
   grid-template-areas: "img content";
-  margin-bottom: 2em;
+  margin-bottom: 1em;
 }
 
 /* container for item information */
@@ -185,6 +185,53 @@ p {
   width: 100%;
 }
 
+/* Customize Item Card */
+/* card container */
+#overlay {
+  display: none;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: rgba(255,255,255,0.7);
+}
+
+#overlay.visible {
+  display: block;
+}
+
+.customize-card {
+  background-color: pink;
+  display: block;
+  margin: auto;
+  top: 50%;
+  transform: translateY(50%);
+  width: 80%;
+  z-index: 2;
+}
+
+.customize-option {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-around; */
+  margin: 0.5em;
+}
+
+.customize-option li {
+  border: 0.25em solid;
+  border-color: #fa8771;
+  border-radius: 1.5em;
+  margin: 0 0.25em;
+  padding: 0.5em 0.75em;
+}
+
+/* form input styling */
+input[type='checkbox'],
+input[type='radio'] {
+  display: none;
+}
+
 /* State Styles */
 @media screen and (min-width: 700px) {
   .menu-list {
@@ -202,6 +249,9 @@ p {
   }
   .order-btn {
     position: relative;
+  }
+  .customize-card {
+    width: 60%;
   }
 }
 @media screen and (min-width: 900px) {

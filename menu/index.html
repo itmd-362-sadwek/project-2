@@ -41,7 +41,7 @@
               who are new to boba or just prefer a simple drink! We use freshly
               brewed black tea with the perfect splash of milk to sweeten it up.</span>
             </p>
-            <p><a href="" class="order-btn" type="button">ADD TO CART</a></p>
+            <p><a href="" class="order-btn" type="button" value="Classic Milk Tea">ADD TO CART</a></p>
           </article>
           <img src="../assets/img/class-mt.jpg" alt="classic milk tea" class="item-image" />
         </li>
@@ -55,7 +55,7 @@
               taste of bubble tea with a twist! Instead of dairy milk, we add organic
               coconut milk to our black tea.</span>
             </p>
-            <p><a href="" class="order-btn" type="button">ADD TO CART</a></p>
+            <p><a href="" class="order-btn" type="button" value="Coconut Milk Tea">ADD TO CART</a></p>
           </article>
           <img src="../assets/img/coconut-mt.jpg" alt="coconut boba" class="item-image" />
         </li>
@@ -69,7 +69,7 @@
               it looks. We use rose syrup infused black tea to bring out the rosy
               taste.</span>
             </p>
-            <p><a href="" class="order-btn" type="button">ADD TO CART</a></p>
+            <p><a href="" class="order-btn" type="button" value="Rose Bubble Tea">ADD TO CART</a></p>
           </article>
           <img src="../assets/img/rose-mt.jpg" alt="rose boba" class="item-image" />
         </li>
@@ -85,7 +85,7 @@
               you're looking to expand your knowledge of flavors in the world of
               bubble tea!</span>
             </p>
-            <p><a href="" class="order-btn" type="button">ADD TO CART</a></p>
+            <p><a href="" class="order-btn" type="button" value="Taro Milk Tea">ADD TO CART</a></p>
           </article>
           <img src="../assets/img/taro-mt.jpg" alt="taro boba" class="item-image" />
         </li>
@@ -107,7 +107,7 @@
             <span class="item-desc">We use our best and ripe bananas for our Banana
             Nut Bread. It is baked fresh in our kitchen.</span>
           </p>
-          <p><a href="" class="order-btn" type="button">ADD TO CART</a></p>
+          <p><a href="" class="order-btn" type="button" value="Banana Nut Bread">ADD TO CART</a></p>
         </article>
         <img src="../assets/img/banana-bread.jpg" alt="banana bread" class="item-image" />
       </li>
@@ -120,7 +120,7 @@
               <span class="item-desc">In the mood for some cinnamon? Try our Cinnamon
               Rolls!</span>
             </p>
-            <p><a href="" class="order-btn" type="button">ADD TO CART</a></p>
+            <p><a href="" class="order-btn" type="button" value="Cinnamon Roll">ADD TO CART</a></p>
           </article>
           <img src="../assets/img/cinnamon.jpg" alt="cinnamon roll" class="item-image" />
         </li>
@@ -132,7 +132,7 @@
               <span class="item-price">$4.50</span>
               <span class="item-desc">Deliciously assorted cupcakes for any occassion.</span>
             </p>
-            <p><a href="" class="order-btn" type="button">ADD TO CART</a></p>
+            <p><a href="" class="order-btn" type="button" value="Cupcakes">ADD TO CART</a></p>
           </article>
           <img src="../assets/img/cupcakes.jpg" alt="cupcakes" class="item-image" />
         </li>
@@ -146,7 +146,7 @@
               up with the best recipe for our Macarons! We promise you will be
               coming back for more!</span>
             </p>
-            <p><a href="" class="order-btn" type="button">ADD TO CART</a></p>
+            <p><a href="" class="order-btn" type="button" value="Macarons">ADD TO CART</a></p>
           </article>
           <img src="../assets/img/macarons.jpg" alt="macarons" class="item-image" />
         </li>
@@ -154,5 +154,51 @@
       <figcaption></figcaption>
     </figure>
   </main>
+    <section id="overlay">
+      <form  class="customize-card">
+        <article class="customize-category">
+          <h3 class="customize-title">Sugar Level</h3>
+          <ul class="customize-option">
+            <li><input type="radio" id="zero-sugar" class="custom-option" name="sugar-level" value="0">
+            <label for="zero-sugar">None</label></li>
+            <li><input type="radio" id="thirty-sugar" class="custom-option" name="sugar-level" value="30">
+            <label for="thirty-sugar">30%</label></li>
+            <li><input type="radio" id="fifty-sugar" class="custom-option" name="sugar-level" value="50">
+            <label for="fifty-sugar">50%</label></li>
+            <li><input type="radio" id="thirty-sugar" class="custom-option" name="sugar-level" value="30">
+            <label for="thirty-sugar">70%</label></li>
+            <li><input type="radio" id="regular-sugar" class="custom-option" name="sugar-level" value="100">
+            <label for="regular-sugar">Regular</label></li>
+          </ul>
+        </article>
+        <article class="customize-category">
+          <h3 class="customize-title">Ice Level</h3>
+          <ul class="customize-option">
+            <li><input type="radio" id="no-ice" class="custom-option" name="ice-level" value="No Ice">
+            <label for="no-ice">No Ice</label></li>
+            <li><input type="radio" id="less-ice" class="custom-option" name="ice-level" value="Less Ice">
+            <label for="less-ice">Less Ice</label></li>
+            <li><input type="radio" id="normal-ice" class="custom-option" name="ice-level" value="Normal Ice">
+            <label for="normal-ice">Normal Ice</label></li>
+          </ul>
+        </article>
+        <article class="customize-category">
+          <h3 class="customize-title">Topping</h3>
+          <ul class="customize-option">
+            <li><input type="checkbox" id="tapioca" class="custom-option" name="topping[]" value="Tapioca" checked>
+            <label for="tapioca">Tapioca</label></li>
+            <li><input type="checkbox" id="coco-jelly" class="custom-option" name="topping[]" value="Coconut Jelly">
+            <label for="coco-jelly">Coconut Jelly</label></li>
+            <li><input type="checkbox" id="red-bean" class="custom-option" name="topping[]" value="Red Bean">
+            <label for="red-bean">Red Bean</label></li>
+            <li><input type="checkbox" id="pudding" class="custom-option" name="topping[]" value="Pudding">
+            <label for="pudding">Pudding</label></li>
+            <li><input type="checkbox" id="pop-bubbles" class="custom-option" name="topping[]" value="Popping Bubbles">
+            <label for="pop-bubbles">Popping Bubbles</label></li>
+          </ul>
+        </article>
+        <a role="button" id="submit" class="submit-btn" value="Submit">Submit</a>
+      </form>
+    </section>
 </body>
 </html>
