@@ -98,6 +98,23 @@ if (document.querySelector('#drinks')) {
   });
 }
 
+class Item {
+  constructor(button) {
+    this.name = button.getAttribute('value');
+  }
+}
+
+if (document.querySelector('#drinks')) {
+  var drinksMenu = document.querySelector('#drinks');
+  drinksMenu.addEventListener('click',function(event){
+    // Select the necessary elements from the DOM
+    var button = event.target;
+    if (button.className == 'order-btn')
+      event.preventDefault();
+      displayCard(event.target);
+  });
+}
+
 function displayCard (button) {
   // parentContainer = li.item-container
   let parentContainer = button.parentElement.parentElement.parentElement;
@@ -154,4 +171,7 @@ function displayCard (button) {
   container.classList.add('customize-card');
   parentContainer.insertAdjacentElement('afterend',container);
 }
+<<<<<<< HEAD
+>>>>>>> Add code that displays customizing card
+=======
 >>>>>>> Add code that displays customizing card
