@@ -67,6 +67,24 @@ function checkZip(value) {
   return validate(zipcode.length, eq, 5);
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+  // Link DOM elements
+  var order = {
+    orderForm: document.querySelector('#order-form');,
+    name: document.querySelector('#name');,
+    confirmButton: document.querySelector('#confirm');,
+    contact: document.querySelector('#contact');
+    help: document.querySelector('#contact .hint');
+    help.innerHTML += ' <b id="err"></b>';
+  };
+
+  var location = {}; {
+    address: order.orderForm.querySelector('#addy'),
+    zipcode: order.orderForm.querySelector('#zip'),
+    city: order.orderForm.querySelector('#city'),
+    state: order.form.querySelector('state')
+  };
+
 var cartItems = localStorage.getItem('item-title', 'item-price', 'item-image', 'order-btn');
 
 cartItems.push(newItem);
