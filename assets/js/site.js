@@ -10,6 +10,63 @@ if (document.readyState == 'loading') {
     ready()
 }
 
+// NOTE: START OF JAVASCRIPT FOR CHECKOUT PAGE
+// Functions from Karl Stolley @ https://github.com/itmd362-2019/demos
+// Comparison function
+function eq(value, condition) {
+  return value === condition;
+}
+
+// Functions to clean up data
+// Function to clean up phone number inputs from user
+function cleanNum(value) {
+  return value.replace(/\D/g, '');
+}
+
+// Function to clean up whitespace in user input
+function cleanWhitespace(value) {
+  return value.replace(/\s/g, '');
+}
+
+// Function to remove the +1 area code in phone numbers
+function removeOne(value) {
+  return value.replace(/^1/, '');
+}
+
+// Function to validate the user's inputs
+function validate(value, check, condition {
+  if (eq(typeof(check.test), 'function')) {
+    // Check regular expression
+    return check.test(value);
+  } else if (eq(typeof(check), 'function')) {
+    // Check comparison function
+    return check(value, condition);
+  } else {
+    return false;
+  }
+}
+
+// Function to check phone number
+function checkPhone(value) {
+  // Remove the one and any non-digits from the phone number if exists
+  var phone_input = removeOne(cleanNum(value));
+  // Ensure phone number entered is exactly 10 digits
+  return validate(phone_input.length, eq, 10);
+}
+
+// Function to check email
+function checkEmail(value) {
+  var email_input = cleanWhitespace(value);
+  // Ensure there is an @ in between characters
+  return validate(email_input, /^[^@\s]+@[^@\s]+$/g);
+}
+
+// Function to check zip code
+function checkZip(value) {
+  var zipcode = cleanNum(value);
+  return validate(zipcode.length, eq, 5);
+}
+
 var cartItems = localStorage.getItem('item-title', 'item-price', 'item-image', 'order-btn');
 
 cartItems.push(newItem);
