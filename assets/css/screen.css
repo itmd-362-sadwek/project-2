@@ -241,29 +241,27 @@ label {
   padding: 0.5em 0.7em;
   float: left; 
   width: 20%;
-  height:15p
 }
 .product-price{
   padding: 0.5em 0.7em;
-  text-align: center;
+  text-align: right;
   float: left; 
   width: 12%; }
 
 }
-.product-details {
-  margin-right: 15px;
 
-}
 .product-removal {
-  float:left;
+  text-align: auto;
+  float:none;
   padding: 0.5em 0.7em;
+  padding-bottom:15px; 
 
   }
 .product-line-price{
   padding: 0.5em 0.7em;
-  justify-content: left; 
   width: 12%;
   text-align: right;
+  float:none;
 }
 .product-quantity{
   padding: 0.5em 0.7em;
@@ -299,14 +297,15 @@ label {
   a.button {
     -webkit-appearance: button;
     -moz-appearance: button;
-    justify-content: left;
+    float: left;
     border: 0;
-    margin-top: 10px;
-    padding: 6px 25px;
-  background-color: grey;
-  color: black;
-  font-size: 15px;
-  border-radius: 3px;
+    padding: 6px 10px;
+    background-color: grey;
+    color: black;
+    font-size: 15px;
+    border-radius: 3px;
+    text-align: left;
+    padding-top: 5px;
 }
 .a button:hover {
   background-color: #494;
@@ -321,7 +320,6 @@ label {
     clear: both;
     width: 100%;
     text-align: right;
-    margin-bottom: 10px;
     }
     .label {
       float: right;
