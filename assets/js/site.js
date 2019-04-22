@@ -276,12 +276,6 @@ function addToCart(product) {
     }
 }
 
-class Item {
-  constructor(button) {
-    this.name = button.getAttribute('value');
-  }
-}
-
 if (document.querySelector('#drinks')) {
   var drinksMenu = document.querySelector('#drinks');
   drinksMenu.addEventListener('click',function(event){
