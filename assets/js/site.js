@@ -109,9 +109,12 @@ if (document.querySelector('#drinks')) {
   drinksMenu.addEventListener('click',function(event){
     // Select the necessary elements from the DOM
     var button = event.target;
-    if (button.className == 'order-btn')
+    if (button.className == 'order-btn'){
       event.preventDefault();
-      displayCard(event.target);
+      // displayCard(event.target);
+      var card = document.querySelector('#overlay');
+      card.classList.toggle('visible');
+    }
   });
 }
 
@@ -120,15 +123,13 @@ function displayCard (button) {
   let parentContainer = button.parentElement.parentElement.parentElement;
   // create card section
   let container = document.createElement('section');
-  let label = document.createElement('h3');
-  label.classList.add('customize');
   let cardContent = `
     <form>
-    <article>
+    <article class="customize-category">
       <h3 class="customize-title">Sugar Level</h3>
-      <ul class="customize-options">
+      <ul class="customize-option">
         <li><input type="radio" id="zero-sugar" class="custom-option" name="sugar-level" value="0">
-        <label for="zero-sugar">No Sugar</label></li>
+        <label for="zero-sugar">None</label></li>
         <li><input type="radio" id="thirty-sugar" class="custom-option" name="sugar-level" value="30">
         <label for="thirty-sugar">30%</label></li>
         <li><input type="radio" id="fifty-sugar" class="custom-option" name="sugar-level" value="50">
@@ -139,7 +140,7 @@ function displayCard (button) {
         <label for="regular-sugar">Regular</label></li>
       </ul>
     </article>
-    <article>
+    <article class="customize-category">
       <h3 class="customize-title">Ice Level</h3>
       <ul class="customize-option">
         <li><input type="radio" id="no-ice" class="custom-option" name="ice-level" value="No Ice">
@@ -150,21 +151,22 @@ function displayCard (button) {
         <label for="normal-ice">Normal Ice</label></li>
       </ul>
     </article>
-    <article>
+    <article class="customize-category">
       <h3 class="customize-title">Topping</h3>
       <ul class="customize-option">
-        <li><input type="checkbox" id="tapioca" class="custom-option" name="topping" value="Tapioca">
+        <li><input type="checkbox" id="tapioca" class="custom-option" name="topping[]" value="Tapioca" checked>
         <label for="tapioca">Tapioca</label></li>
-        <li><input type="checkbox" id="coco-jelly" class="custom-option" name="topping" value="Coconut Jelly">
+        <li><input type="checkbox" id="coco-jelly" class="custom-option" name="topping[]" value="Coconut Jelly">
         <label for="coco-jelly">Coconut Jelly</label></li>
-        <li><input type="checkbox" id="red-bean" class="custom-option" name="topping" value="Red Bean">
+        <li><input type="checkbox" id="red-bean" class="custom-option" name="topping[]" value="Red Bean">
         <label for="red-bean">Red Bean</label></li>
-        <li><input type="checkbox" id="pudding" class="custom-option" name="topping" value="Pudding">
+        <li><input type="checkbox" id="pudding" class="custom-option" name="topping[]" value="Pudding">
         <label for="pudding">Pudding</label></li>
-        <li><input type="checkbox" id="pop-bubbles" class="custom-option" name="topping" value="Popping Bubbles">
+        <li><input type="checkbox" id="pop-bubbles" class="custom-option" name="topping[]" value="Popping Bubbles">
         <label for="pop-bubbles">Popping Bubbles</label></li>
       </ul>
     </article>
+    <a role="button" id="submit" class="submit-btn" value="Submit">Submit</a>
     </form>
   `;
   container.innerHTML = cardContent;
