@@ -4,6 +4,7 @@ var html = document.querySelector('html');
 html.classList.remove('nojs');
 html.classList.add('js');
 
+// Check if browser can run Javascript
 if (document.readyState == 'loading') {
     document.addEventListener('DOMContentLoaded', ready)
 } else {
