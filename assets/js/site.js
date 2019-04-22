@@ -81,13 +81,6 @@ function removeItem(removeButton)
   });
 }
 
-// Check if browser can run Javascript
-if (document.readyState == 'loading') {
-    document.addEventListener('DOMContentLoaded', ready)
-} else {
-    ready()
-}
-
 // NOTE: START OF JAVASCRIPT FOR CHECKOUT PAGE
 // Functions from Karl Stolley @ https://github.com/itmd362-2019/demos
 // Comparison function
