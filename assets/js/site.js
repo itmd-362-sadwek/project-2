@@ -93,6 +93,27 @@ document.addEventListener('DOMContentLoaded', function() {
   city.addEventListener('focus', function(){});
   state.addEventListener('focus', function(){});
 
+  // Disable submit button without a full 10-digit phone number
+  confirmButton.setAttribute('disabled', 'disabled');
+
+  // Listen for a keyup in entire form
+  orderForm.addEventListener('keyup', function() {
+    var userContact = contact.value;
+    var err;
+    // If statement to ensure user has typed in phone number OR email
+    if(checkPhone(userContact) || checkEmail(userContact)) {
+      // Enable submit button if there is a correct phone number OR email
+      confirmButton.removeAttribute('disabled');
+    } else {
+      err = document.querySelector('#err');
+      if (userContact.length > 10 && err.innerText.length === 0)
+        // Tell user to enter correct input
+        err.innerText = 'Please enter a ten-digit phone number or a valid email.';
+    }
+    // Disable confirm button again due to invalid input from user
+    confirmButton.setAttribute('disabled', 'disabled');
+  });
+
 var cartItems = localStorage.getItem('item-title', 'item-price', 'item-image', 'order-btn');
 
 cartItems.push(newItem);
