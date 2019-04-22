@@ -183,10 +183,7 @@ p {
 }
 
 /*cart */
-/* Apply dollar signs */
-.product .product-price:before, .product .product-line-price:before, .totals-value:before {
-  content: '$';
-}
+
 .cartheading{
   display: flex;
   flex-direction: row;
@@ -207,9 +204,10 @@ p {
   }
   
 .product-image{
+  padding: 0.5em 0.7em;
   float: left; 
   width: 20%;
-  height:15px;
+  height:15p
 }
 .product-price{
   padding: 0.5em 0.7em;
@@ -251,8 +249,8 @@ p {
   
   .remove-product:hover {
     background-color: #a44;
+    text-align: center;
   }
   .product-line-price {
     float:right;
-    width: auto;
   }
