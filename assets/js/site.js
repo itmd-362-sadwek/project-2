@@ -157,6 +157,8 @@ document.addEventListener('DOMContentLoaded', function() {
     contact: document.querySelector('#contact')
   };
 
+  order.help.innerHTML += ' <b id="err"></b>';
+
   var location = {
     address: order.orderForm.querySelector('#addy'),
     zipcode: order.orderForm.querySelector('#zip'),
