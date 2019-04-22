@@ -80,23 +80,6 @@ function removeItem(removeButton)
     recalculateCart();
   });
 }
-=======
-class Item {
-  constructor(button) {
-    this.name = button.getAttribute('value');
-  }
-}
-
-if (document.querySelector('#drinks')) {
-  var drinksMenu = document.querySelector('#drinks');
-  drinksMenu.addEventListener('click',function(event){
-    // Select the necessary elements from the DOM
-    var button = event.target;
-    if (button.className == 'order-btn')
-      event.preventDefault();
-      displayCard(event.target);
-  });
-}
 
 class Item {
   constructor(button) {
@@ -185,7 +168,3 @@ function displayCard (button) {
   container.classList.add('customize-card');
   parentContainer.insertAdjacentElement('afterend',container);
 }
-<<<<<<< HEAD
->>>>>>> Add code that displays customizing card
-=======
->>>>>>> Add code that displays customizing card
