@@ -19,6 +19,51 @@
     </nav>
   </header>
   <main>
+    <h1>Place Your Order Now!</h1>
+    <!-- Order form that customer will fill out for delivery -->
+    <form id="order-form" action="null" method="get">
+      <ol>
+        <!-- Just personal information with address -->
+        <li id="name-area">
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name" />
+        </li>
+        <li id="addy-area">
+          <label for="addy">Street Address</label>
+          <input type="text" name="addy" id="addy" />
+        </li>
+        <!-- Zip code API will be used to auto-populate city and state -->
+        <li id="zip-area"
+          <label for="zip">Zip Code</label>
+          <input type="text" name="zip" id="zip" />
+        </li>
+        <li id="city-area">
+          <label for="city">City</label>
+          <input type="text" name="city" id="city" />
+        </li>
+        <li id="state-area">
+          <label for="state">State</label>
+          <input type="text" name="state" id="state" />
+        </li>
+        <!-- User will be able to choose to enter email OR phone number -->
+        <li id="contact-area">
+          <label for="contact">Email Address/Phone Number</label>
+          <!-- Inform user of their contact choice -->
+          <p class="hint">Please enter either an email OR phone number so we can
+            contact you on the status of your order</p>
+          <input type="text" name="contact" id="contact" />
+        <!-- Payment Information -->
+        <li id="payment-area">
+          <label for="payment">Payment Information</label>
+          <p class="hint">Please enter your credit card information</p>
+          <input type="text" name="payment" id="payment" />
+        </li>
+        <!-- Button to confirm your order -->
+        <li id="confirm-area">
+          <input type="submit" name="confirm" id="confirm" value="Confirm Your Order" />
+        </li>
+      </ol>
+    </form>
   </main>
 </body>
 </html>
