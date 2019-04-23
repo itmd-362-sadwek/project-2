@@ -186,12 +186,13 @@ p {
 }
 
 /* Customize Item Card */
-/* card container */
+/* disable background scrolling */
 body.disable-scroll {
   position: absolute;
   overflow: hidden;
 }
 
+/* card container */
 #overlay {
   display: none;
   left: 0;
@@ -199,46 +200,94 @@ body.disable-scroll {
   overflow-y: scroll;
   width: 100%;
   height: 100%;
-  padding-top: 2em;
+  padding: 2em 0;
   position: fixed;
   background-color: rgba(255,255,255,0.7);
 }
 
+/* displays section that holds card */
 #overlay.visible {
   display: block;
 }
 
+/* card styling */
 .customize-card {
   background-color: #fa8771;
   border-radius: 1em;
   display: block;
   margin: auto;
+  margin-bottom: 8em;
   padding: 1em;
   width: 70%;
   z-index: 2;
 }
 
+.customize-title {
+  color: white;
+  font-family: Santio, Calibri, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 2.666667em;
+  line-height: 1.1em;
+  text-align: center;
+}
+
+/* group of customizing options */
 .customize-option {
-  display: flex;
-  flex-direction: column;
-  /* justify-content: space-around; */
-  margin: 0.5em;
+  margin: 1em;
 }
 
 .customize-option li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* options */
+label {
   background-color: rgba(255,255,255,0.7);
   border: 0.25em solid;
   border-color: white;
   border-radius: 1.5em;
-  margin: 0 0.25em;
-  padding: 0.5em 0.75em;
+  padding: 0.25em 0.75em;
   text-align: center;
+}
+
+label:hover {
+  border-color: #ffca3a;
+}
+
+input:checked + label {
+  background-color: #ffca3a;
 }
 
 /* form input styling */
 input[type='checkbox'],
 input[type='radio'] {
-  display: none;
+  opacity: 0;
+  margin: 0;
+}
+
+.submit-btn {
+  margin-top: 2em;
+}
+
+#submit-drink {
+  background-color: #f7f2da;
+  border-radius: 2em;
+  padding: 0 0.5em 0.3em 0.5em;
+  border: 0;
+  outline: 0;
+  color: #92ad00;
+  font-family: Santio, Calibri, Arial, sans-serif;
+  font-size: 1.666667em; /* 30px / 18px  = 1.666667*/
+  line-height: 1.5em;
+  margin: auto;
+  width: 100%;
+}
+
+#submit-drink:hover {
+  background-color: #cadd64;
+  color: #f7f2da;
 }
 
 /* State Styles */
