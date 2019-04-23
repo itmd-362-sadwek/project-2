@@ -112,7 +112,7 @@ function removeOne(value) {
 }
 
 // Function to validate the user's inputs
-function validate(value, check, condition {
+function validate(value, check, condition) {
   if (eq(typeof(check.test), 'function')) {
     // Check regular expression
     return check.test(value);
@@ -131,7 +131,7 @@ function checkPhone(value) {
   // Remove the one and any non-digits from the phone number if exists
   var phone_input = removeOne(cleanNum(value));
   // Ensure phone number entered is exactly 10 digits
-  return validate(phone_input.length, eq, 10);
+  return validate(phone_input.length,eq,10);
 }
 
 // Function to check email
@@ -144,25 +144,24 @@ function checkEmail(value) {
 // Function to check zip code
 function checkZip(value) {
   var zipcode = cleanNum(value);
-  return validate(zipcode.length, eq, 5);
+  return validate(zipcode.length,eq,5);
 }
 
+console.log('func start');
 document.addEventListener('DOMContentLoaded', function() {
   // Link DOM elements
   var order = {
-    orderForm: document.querySelector('#order-form');,
-    name: document.querySelector('#name');,
-    confirmButton: document.querySelector('#confirm');,
-    contact: document.querySelector('#contact');
-    help: document.querySelector('#contact .hint');
-    help.innerHTML += ' <b id="err"></b>';
+    orderForm: document.querySelector('#order-form'),
+    name: document.querySelector('#name'),
+    confirmButton: document.querySelector('#confirm'),
+    contact: document.querySelector('#contact')
   };
 
   var location = {
     address: order.orderForm.querySelector('#addy'),
     zipcode: order.orderForm.querySelector('#zip'),
     city: order.orderForm.querySelector('#city'),
-    state: order.form.querySelector('state')
+    state: order.form.querySelector('#state')
   };
 
   // Focus on user landed input textboxes
@@ -189,56 +188,55 @@ document.addEventListener('DOMContentLoaded', function() {
       if (userContact.length > 10 && err.innerText.length === 0)
         // Tell user to enter correct input
         err.innerText = 'Please enter a ten-digit phone number or a valid email.';
+      }
+      // Disable confirm button again due to invalid input from user
+      confirmButton.setAttribute('disabled', 'disabled');
+    });
+
+    // Check to see if the browser supports Fetch API
+    if ('fetch' in window) {
+      // Cool fade-out effect
+      location.city.classList.add('fade-out');
+      location.state.classList.add('fade-out');
+
+      var zipcode;
+      location.zipcode.addEventListener('keyup', function(e) {
+        // If statement to make sure no duplicate requests happen
+        if (checkZip(location.zipcode.value) && zipcode !== location.zipcode.value) {
+          // Fetch zipcode API from Zippopotam.us
+          zipcode = location.zipcode.value;
+          fetch('http://api.zippopotam.us/us/' + location.zipcode.value)
+          .then (function(response) {
+            if (response.ok) {
+              return response.json();
+            }
+            throw Error('There is no data for the zip code ' + location.zipcode.value)
+          })
+          .then (function(parsed_json) {
+            location.city.value = parsed_json.places[0] ["place name"];
+            location.state.value = parsed_json.places[0] ["state"];
+            // Cool fade-in effect
+            location.city.classList.add('fade-in');
+            location.state.classList.add('fade-in');
+          })
+          // Do this when an error occurs
+          .catch (function(error) {
+            location.city.value = '';
+            location.state.value = '';
+            location.city.classList.add('fade-in');
+            location.state.classList.add('fade-in');
+          });
+        }
+      });
     }
-    // Disable confirm button again due to invalid input from user
-    confirmButton.setAttribute('disabled', 'disabled');
+  }
+  // Listen for click events on confirm button and submit when clicked
+  orderForm.confirmButton.addEventListener('click', function(event) {
+    // Confirm the order form
+    event.preventDefault();
+    orderForm.confirmButton.click();
   });
-
-// Check to see if the browser supports Fetch API
-if ('fetch' in window) {
-  // Cool fade-out effect
-  location.city.classList.add('fade-out');
-  location.state.classList.add('fade-out');
-
-  var zipcode;
-  location.zipcode.addEventListener('keyup', function(e) {
-    // If statement to make sure no duplicate requests happen
-    if (checkZip(location.zipcode.value) && zipcode !== location.zipcode.value) {
-      // Fetch zipcode API from Zippopotam.us
-      zipcode = location.zipcode.value;
-      fetch('http://api.zippopotam.us/us/' + location.zipcode.value)
-        .then (function(response) {
-          if (response.ok) {
-            return response.json();
-          }
-          throw Error('There is no data for the zip code ' + location.zipcode.value)
-        })
-        .then (function(parsed_json) {
-          location.city.value = parsed_json.places[0] ["place name"];
-          location.state.value = parsed_json.places[0] ["state"];
-          // Cool fade-in effect
-          location.city.classList.add('fade-in');
-          location.state.classList.add('fade-in');
-        })
-        // Do this when an error occurs
-        .catch (function(error) {
-          location.city.value = '';
-          location.state.value = '';
-          location.city.classList.add('fade-in');
-          location.state.classList.add('fade-in');
-        });
-    }
-  });
-}
-
-// Listen for click events on confirm button and submit when clicked
-orderForm.confirmButton.addEventListener('click', function(event) {
-  // Confirm the order form
-  event.preventDefault();
-  orderForm.confirmButton.click();
-})
-// NOTE: END OF JAVASCRIPT FOR CHECKOUT PAGE
-
+  // NOTE: END OF JAVASCRIPT FOR CHECKOUT PAGE
 
 //Cart funtions
 //Local storage for item info
