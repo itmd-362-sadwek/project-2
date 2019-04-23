@@ -326,8 +326,32 @@ if (document.querySelector('#overlay')) {
   overlay.addEventListener('click',function(event){
     // Select the necessary elements from the DOM
     var areaClicked = event.target;
-    if (areaClicked == overlay)
+    console.log(areaClicked);
+    if (areaClicked == overlay) {
       toggleCard();
+    }
+
+    if (areaClicked == overlay.querySelector('#submit-drink')) {
+      toggleCard();
+      // gets all radio buttons/ checkboxes in the form
+      var arrayButtons = overlay.querySelectorAll('.custom-option');
+      var toppings = [];
+      // loops through all rb/ cb
+      for (var option of arrayButtons) {
+        // if the rb/cb is from toppings and is one of the chosen ones (hehe)
+        // add to toppings array
+        if (option.name == 'topping' && option.checked == true) {
+          toppings.push(option.value);
+        }
+      } // end for loop
+
+      // Get values of drinks
+      const sugar = overlay.querySelector('.customize-card').elements['sugar-level'].value;
+      const ice = overlay.querySelector('.customize-card').elements['ice-level'].value;
+      // create new drink
+      var newItem = new Drink(drinkName,sugar,ice,toppings);
+      console.log(newItem);
+    } // exit card area
   });
 }
 
