@@ -35,7 +35,7 @@ function removeOne(value) {
 }
 
 // Function to validate the user's inputs
-function validate(value, check, condition {
+function validate(value, check, condition) {
   if (eq(typeof(check.test), 'function')) {
     // Check regular expression
     return check.test(value);
@@ -52,7 +52,7 @@ function checkPhone(value) {
   // Remove the one and any non-digits from the phone number if exists
   var phone_input = removeOne(cleanNum(value));
   // Ensure phone number entered is exactly 10 digits
-  return validate(phone_input.length, eq, 10);
+  return validate(phone_input.length,eq,10);
 }
 
 // Function to check email
@@ -65,25 +65,24 @@ function checkEmail(value) {
 // Function to check zip code
 function checkZip(value) {
   var zipcode = cleanNum(value);
-  return validate(zipcode.length, eq, 5);
+  return validate(zipcode.length,eq,5);
 }
 
+console.log('func start');
 document.addEventListener('DOMContentLoaded', function() {
   // Link DOM elements
   var order = {
-    orderForm: document.querySelector('#order-form');,
-    name: document.querySelector('#name');,
-    confirmButton: document.querySelector('#confirm');,
-    contact: document.querySelector('#contact');
-    help: document.querySelector('#contact .hint');
-    help.innerHTML += ' <b id="err"></b>';
+    orderForm: document.querySelector('#order-form'),
+    name: document.querySelector('#name'),
+    confirmButton: document.querySelector('#confirm'),
+    contact: document.querySelector('#contact')
   };
 
   var location = {
     address: order.orderForm.querySelector('#addy'),
     zipcode: order.orderForm.querySelector('#zip'),
     city: order.orderForm.querySelector('#city'),
-    state: order.form.querySelector('state')
+    state: order.form.querySelector('#state')
   };
 
   // Focus on user landed input textboxes
