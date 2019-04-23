@@ -309,8 +309,10 @@ var drinkName = "";
 // checks if current page is on menu
 if (document.querySelector('#drinks')) {
   var drinksMenu = document.querySelector('#drinks');
+  // if there are any clicks happening inside drinksMenu
+  // check if it's from an add-to-order btn
   drinksMenu.addEventListener('click',function(event){
-    // Select the necessary elements from the DOM
+    // button = object that was clicked
     var button = event.target;
     if (button.className == 'order-btn'){
       event.preventDefault();
@@ -321,8 +323,12 @@ if (document.querySelector('#drinks')) {
   });
 }
 
+// if the customize-overlay is on display,
+// play this js
 if (document.querySelector('#overlay')) {
   var overlay = document.querySelector('#overlay');
+  // if there are any clicks happening on overlay
+  // check if it's from outside the form-card
   overlay.addEventListener('click',function(event){
     // Select the necessary elements from the DOM
     var areaClicked = event.target;
