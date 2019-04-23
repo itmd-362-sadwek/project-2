@@ -233,6 +233,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
 }); // end of DOMContentLoaded
 
+//Cart funtions
+if (document.querySelector('#cart-items')) {
+  var arrayCart = getCartItems('steap-cart');
+  // TODO: Display items from arrayCart
+}
+
 // JS: Displays and removes customization card
 
 function Drink(name, sugar, ice, toppings) {
