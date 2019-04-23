@@ -109,56 +109,55 @@ document.addEventListener('DOMContentLoaded', function() {
       if (userContact.length > 10 && err.innerText.length === 0)
         // Tell user to enter correct input
         err.innerText = 'Please enter a ten-digit phone number or a valid email.';
+      }
+      // Disable confirm button again due to invalid input from user
+      confirmButton.setAttribute('disabled', 'disabled');
+    });
+
+    // Check to see if the browser supports Fetch API
+    if ('fetch' in window) {
+      // Cool fade-out effect
+      location.city.classList.add('fade-out');
+      location.state.classList.add('fade-out');
+
+      var zipcode;
+      location.zipcode.addEventListener('keyup', function(e) {
+        // If statement to make sure no duplicate requests happen
+        if (checkZip(location.zipcode.value) && zipcode !== location.zipcode.value) {
+          // Fetch zipcode API from Zippopotam.us
+          zipcode = location.zipcode.value;
+          fetch('http://api.zippopotam.us/us/' + location.zipcode.value)
+          .then (function(response) {
+            if (response.ok) {
+              return response.json();
+            }
+            throw Error('There is no data for the zip code ' + location.zipcode.value)
+          })
+          .then (function(parsed_json) {
+            location.city.value = parsed_json.places[0] ["place name"];
+            location.state.value = parsed_json.places[0] ["state"];
+            // Cool fade-in effect
+            location.city.classList.add('fade-in');
+            location.state.classList.add('fade-in');
+          })
+          // Do this when an error occurs
+          .catch (function(error) {
+            location.city.value = '';
+            location.state.value = '';
+            location.city.classList.add('fade-in');
+            location.state.classList.add('fade-in');
+          });
+        }
+      });
     }
-    // Disable confirm button again due to invalid input from user
-    confirmButton.setAttribute('disabled', 'disabled');
+  }
+  // Listen for click events on confirm button and submit when clicked
+  orderForm.confirmButton.addEventListener('click', function(event) {
+    // Confirm the order form
+    event.preventDefault();
+    orderForm.confirmButton.click();
   });
-
-// Check to see if the browser supports Fetch API
-if ('fetch' in window) {
-  // Cool fade-out effect
-  location.city.classList.add('fade-out');
-  location.state.classList.add('fade-out');
-
-  var zipcode;
-  location.zipcode.addEventListener('keyup', function(e) {
-    // If statement to make sure no duplicate requests happen
-    if (checkZip(location.zipcode.value) && zipcode !== location.zipcode.value) {
-      // Fetch zipcode API from Zippopotam.us
-      zipcode = location.zipcode.value;
-      fetch('http://api.zippopotam.us/us/' + location.zipcode.value)
-        .then (function(response) {
-          if (response.ok) {
-            return response.json();
-          }
-          throw Error('There is no data for the zip code ' + location.zipcode.value)
-        })
-        .then (function(parsed_json) {
-          location.city.value = parsed_json.places[0] ["place name"];
-          location.state.value = parsed_json.places[0] ["state"];
-          // Cool fade-in effect
-          location.city.classList.add('fade-in');
-          location.state.classList.add('fade-in');
-        })
-        // Do this when an error occurs
-        .catch (function(error) {
-          location.city.value = '';
-          location.state.value = '';
-          location.city.classList.add('fade-in');
-          location.state.classList.add('fade-in');
-        });
-    }
-  });
-}
-
-// Listen for click events on confirm button and submit when clicked
-orderForm.confirmButton.addEventListener('click', function(event) {
-  // Confirm the order form
-  event.preventDefault();
-  orderForm.confirmButton.click();
-})
-// NOTE: END OF JAVASCRIPT FOR CHECKOUT PAGE
-
+  // NOTE: END OF JAVASCRIPT FOR CHECKOUT PAGE
 
 var cartItems = localStorage.getItem('item-title', 'item-price', 'item-image', 'order-btn');
 
