@@ -124,7 +124,11 @@ function checkPhone(value) {
   // Remove the one and any non-digits from the phone number if exists
   var phone_input = removeOne(cleanNum(value));
   // Ensure phone number entered is exactly 10 digits
+<<<<<<< HEAD
   return validate(phone_input.length,eq,10);
+=======
+  return validate(phone_input.length, eq, 10);
+>>>>>>> Uncomment JS
 }
 
 // Function to check email
@@ -137,17 +141,28 @@ function checkEmail(value) {
 // Function to check zip code
 function checkZip(value) {
   var zipcode = cleanNum(value);
+<<<<<<< HEAD
   return validate(zipcode.length,eq,5);
 }
 
 console.log('func start');
+=======
+  return validate(zipcode.length, eq, 5);
+}
+
+>>>>>>> Uncomment JS
 document.addEventListener('DOMContentLoaded', function() {
   // Link DOM elements
   var order = {
     orderForm: document.querySelector('#order-form'),
     name: document.querySelector('#name'),
     confirmButton: document.querySelector('#confirm'),
+<<<<<<< HEAD
     contact: document.querySelector('#contact')
+=======
+    contact: document.querySelector('#contact'),
+    help: document.querySelector('#contact .hint')
+>>>>>>> Uncomment JS
   };
 
   order.help.innerHTML += ' <b id="err"></b>';
@@ -156,7 +171,11 @@ document.addEventListener('DOMContentLoaded', function() {
     address: order.orderForm.querySelector('#addy'),
     zipcode: order.orderForm.querySelector('#zip'),
     city: order.orderForm.querySelector('#city'),
+<<<<<<< HEAD
     state: order.form.querySelector('#state')
+=======
+    state: order.form.querySelector('state')
+>>>>>>> Uncomment JS
   };
 
   // Focus on user landed input textboxes
@@ -275,6 +294,8 @@ function addToCart(product) {
         localStorage.setItem('cart', JSON.stringify(cart));
     }
 }
+
+// JS: Displays and removes customization card
 
 if (document.querySelector('#drinks')) {
   var drinksMenu = document.querySelector('#drinks');
