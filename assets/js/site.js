@@ -297,6 +297,16 @@ function addToCart(product) {
 
 // JS: Displays and removes customization card
 
+function Drink(name, sugar, ice, toppings) {
+  this.name = name;
+  this.sugar = sugar;
+  this.ice = ice;
+  this.toppings = toppings;
+}
+
+var drinkName = "";
+
+// checks if current page is on menu
 if (document.querySelector('#drinks')) {
   var drinksMenu = document.querySelector('#drinks');
   drinksMenu.addEventListener('click',function(event){
