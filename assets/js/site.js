@@ -285,6 +285,26 @@ function Drink(name, sugar, ice, toppings) {
 
 var drinkName = "";
 
+function storeCartItems(key, data) {
+  localStorage.setItem(key, JSON.stringify(data));
+}
+
+function getCartItems(key) {
+  if(Object.keys(localStorage).includes(key))
+    return JSON.parse(localStorage.getItem(key));
+  else {
+    var arrCart = [];
+    return arrCart;
+  }
+}
+
+function toggleCard() {
+  var card = document.querySelector('#overlay');
+  card.classList.toggle('visible');
+  var page = document.querySelector('body');
+  page.classList.toggle('disable-scroll');
+}
+
 // checks if current page is on menu
 if (document.querySelector('#drinks')) {
   var drinksMenu = document.querySelector('#drinks');
@@ -343,24 +363,4 @@ if (document.querySelector('#overlay')) {
       storeCartItems('steap-cart', arrayCart);
     } // exit card area
   });
-}
-
-function storeCartItems(key, data) {
-  localStorage.setItem(key, JSON.stringify(data));
-}
-
-function getCartItems(key) {
-  if(Object.keys(localStorage).includes(key))
-    return JSON.parse(localStorage.getItem(key));
-  else {
-    var arrCart = [];
-    return arrCart;
-  }
-}
-
-function toggleCard() {
-  var card = document.querySelector('#overlay');
-  card.classList.toggle('visible');
-  var page = document.querySelector('body');
-  page.classList.toggle('disable-scroll');
 }
