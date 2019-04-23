@@ -81,13 +81,6 @@ function removeItem(removeButton)
   });
 }
 
-// Check if browser can run Javascript
-if (document.readyState == 'loading') {
-    document.addEventListener('DOMContentLoaded', ready)
-} else {
-    ready()
-}
-
 // NOTE: START OF JAVASCRIPT FOR CHECKOUT PAGE
 // Functions from Karl Stolley @ https://github.com/itmd362-2019/demos
 // Comparison function
@@ -281,34 +274,75 @@ function addToCart(product) {
     }
 }
 
-class Item {
-  constructor(button) {
-    this.name = button.getAttribute('value');
-  }
+// JS: Displays and removes customization card
+
+function Drink(name, sugar, ice, toppings) {
+  this.name = name;
+  this.sugar = sugar;
+  this.ice = ice;
+  this.toppings = toppings;
 }
 
+var drinkName = "";
+
+// checks if current page is on menu
 if (document.querySelector('#drinks')) {
   var drinksMenu = document.querySelector('#drinks');
+  // if there are any clicks happening inside drinksMenu
+  // check if it's from an add-to-order btn
   drinksMenu.addEventListener('click',function(event){
-    // Select the necessary elements from the DOM
+    // button = object that was clicked
     var button = event.target;
     if (button.className == 'order-btn'){
       event.preventDefault();
-      // displayCard(event.target);
-      var card = document.querySelector('#overlay');
-      card.classList.toggle('visible');
+      // reach for h3 text
+      drinkName = button.parentElement.previousElementSibling.previousElementSibling.textContent;
+      toggleCard();
     }
   });
 }
 
+// if the customize-overlay is on display,
+// play this js
 if (document.querySelector('#overlay')) {
   var overlay = document.querySelector('#overlay');
+  // if there are any clicks happening on overlay
+  // check if it's from outside the form-card
   overlay.addEventListener('click',function(event){
     // Select the necessary elements from the DOM
     var areaClicked = event.target;
-    if (areaClicked == overlay){
-      var card = document.querySelector('#overlay');
-      card.classList.toggle('visible');
+    console.log(areaClicked);
+    if (areaClicked == overlay) {
+      toggleCard();
     }
+
+    if (areaClicked == overlay.querySelector('#submit-drink')) {
+      toggleCard();
+      // gets all radio buttons/ checkboxes in the form
+      var arrayButtons = overlay.querySelectorAll('.custom-option');
+      var toppings = [];
+      // loops through all rb/ cb
+      for (var option of arrayButtons) {
+        // if the rb/cb is from toppings and is one of the chosen ones (hehe)
+        // add to toppings array
+        if (option.name == 'topping' && option.checked == true) {
+          toppings.push(option.value);
+        }
+      } // end for loop
+
+      // Get values of drinks
+      const sugar = overlay.querySelector('.customize-card').elements['sugar-level'].value;
+      const ice = overlay.querySelector('.customize-card').elements['ice-level'].value;
+      // create new drink
+      var newItem = new Drink(drinkName,sugar,ice,toppings);
+      console.log(newItem);
+    } // exit card area
   });
+}
+
+function toggleCard() {
+  var card = document.querySelector('#overlay');
+  card.classList.toggle('visible');
+  var page = document.querySelector('body');
+  page.classList.toggle('disable-scroll');
 }
