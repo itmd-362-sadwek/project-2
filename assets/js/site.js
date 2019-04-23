@@ -284,7 +284,6 @@ function Drink(name, sugar, ice, toppings) {
 }
 
 var drinkName = "";
-var arrayItems = [];
 
 // checks if current page is on menu
 if (document.querySelector('#drinks')) {
@@ -336,24 +335,27 @@ if (document.querySelector('#overlay')) {
       const ice = overlay.querySelector('.customize-card').elements['ice-level'].value;
       // create new drink
       var newItem = new Drink(drinkName,sugar,ice,toppings);
-      console.log(newItem);
-
-      //// TODO: get localStorage, return localStorage
-
-      storePrefixedInputStorageItem(arrayItems);
-
+      // get array of cartItems
+      var arrayCart = getCartItems('steap-cart');
+      // push new Item to cart
+      arrayCart.push(newItem);
+      // push cart to localStorage
+      storeCartItems('steap-cart', arrayCart);
     } // exit card area
   });
 }
 
-function storePrefixedInputStorageItem(prefix,input_element) {
-  var item_data = getInputData(input_element);
-  localStorage.setItem(prefix + item_data.id, JSON.stringify(item_data));
+function storeCartItems(key, data) {
+  localStorage.setItem(key, JSON.stringify(data));
 }
 
-function retrieveAndParseInputStorageItem(key) {
-  if(localStorage.key)
-  return JSON.parse(localStorage.getItem(key));
+function getCartItems(key) {
+  if(Object.keys(localStorage).includes(key))
+    return JSON.parse(localStorage.getItem(key));
+  else {
+    var arrCart = [];
+    return arrCart;
+  }
 }
 
 function toggleCard() {
