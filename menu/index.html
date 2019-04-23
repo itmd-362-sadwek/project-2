@@ -155,7 +155,7 @@
     </figure>
   </main>
     <section id="overlay">
-      <form  class="customize-card">
+      <form class="customize-card">
         <article class="customize-category">
           <h3 class="customize-title">Sugar Level</h3>
           <ul class="customize-option">
@@ -167,7 +167,7 @@
             <label for="fifty-sugar">50%</label></li>
             <li><input type="radio" id="seventy-sugar" class="custom-option" name="sugar-level" value="70" />
             <label for="seventy-sugar">70%</label></li>
-            <li><input type="radio" id="regular-sugar" class="custom-option" name="sugar-level" value="100" />
+            <li><input type="radio" id="regular-sugar" class="custom-option" name="sugar-level" value="100" checked="true" />
             <label for="regular-sugar">Regular</label></li>
           </ul>
         </article>
@@ -178,26 +178,28 @@
             <label for="no-ice">No Ice</label></li>
             <li><input type="radio" id="less-ice" class="custom-option" name="ice-level" value="Less Ice" />
             <label for="less-ice">Less Ice</label></li>
-            <li><input type="radio" id="normal-ice" class="custom-option" name="ice-level" value="Normal Ice" />
+            <li><input type="radio" id="normal-ice" class="custom-option" name="ice-level" value="Normal Ice" checked="true" />
             <label for="normal-ice">Normal Ice</label></li>
           </ul>
         </article>
         <article class="customize-category">
           <h3 class="customize-title">Topping</h3>
           <ul class="customize-option">
-            <li><input type="checkbox" id="tapioca" class="custom-option" name="topping[]" value="Tapioca" checked />
+            <li><input type="checkbox" id="tapioca" class="custom-option" name="topping" value="Tapioca" checked="true" />
             <label for="tapioca">Tapioca</label></li>
-            <li><input type="checkbox" id="coco-jelly" class="custom-option" name="topping[]" value="Coconut Jelly" />
+            <li><input type="checkbox" id="coco-jelly" class="custom-option" name="topping" value="Coconut Jelly" />
             <label for="coco-jelly">Coconut Jelly</label></li>
-            <li><input type="checkbox" id="red-bean" class="custom-option" name="topping[]" value="Red Bean" />
+            <li><input type="checkbox" id="red-bean" class="custom-option" name="topping" value="Red Bean" />
             <label for="red-bean">Red Bean</label></li>
-            <li><input type="checkbox" id="pudding" class="custom-option" name="topping[]" value="Pudding" />
+            <li><input type="checkbox" id="pudding" class="custom-option" name="topping" value="Pudding" />
             <label for="pudding">Pudding</label></li>
-            <li><input type="checkbox" id="pop-bubbles" class="custom-option" name="topping[]" value="Popping Bubbles" />
+            <li><input type="checkbox" id="pop-bubbles" class="custom-option" name="topping" value="Popping Bubbles" />
             <label for="pop-bubbles">Popping Bubbles</label></li>
           </ul>
         </article>
-        <span><a href="" type="button" id="submit" class="submit-btn" value="Submit">Submit</a></span>
+        <article class="submit-btn" >
+          <input type="button" name="submit" id="submit-drink" value="Submit" />
+        </article
       </form>
     </section>
     <script src="../assets/js/site.js" async></script>
