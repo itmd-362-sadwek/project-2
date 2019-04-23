@@ -314,6 +314,8 @@ if (document.querySelector('#drinks')) {
     var button = event.target;
     if (button.className == 'order-btn'){
       event.preventDefault();
+      // reach for h3 text
+      drinkName = button.parentElement.previousElementSibling.previousElementSibling.textContent;
       toggleCard();
     }
   });
