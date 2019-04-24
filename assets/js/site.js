@@ -173,7 +173,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var userContact = contact.value;
     var err;
     // If statement to ensure user has typed in phone number OR email
-    if(checkPhone(userContact) || checkEmail(userContact)) {
+    if (checkPhone(userContact) || checkEmail(userContact)) {
       // Enable submit button if there is a correct phone number OR email
       confirmButton.removeAttribute('disabled');
     } else {
@@ -181,48 +181,48 @@ document.addEventListener('DOMContentLoaded', function() {
       if (userContact.length > 10 && err.innerText.length === 0)
         // Tell user to enter correct input
         err.innerText = 'Please enter a ten-digit phone number or a valid email.';
-      }
-      // Disable confirm button again due to invalid input from user
-      confirmButton.setAttribute('disabled', 'disabled');
-    });
+    }
+    // Disable confirm button again due to invalid input from user
+    confirmButton.setAttribute('disabled', 'disabled');
+  });
 
-    // Check to see if the browser supports Fetch API
-    if ('fetch' in window) {
-      // Cool fade-out effect
-      location.city.classList.add('fade-out');
-      location.state.classList.add('fade-out');
+  // Check to see if the browser supports Fetch API
+  if ('fetch' in window) {
+    // Cool fade-out effect
+    location.city.classList.add('fade-out');
+    location.state.classList.add('fade-out');
 
-      var zipcode;
-      location.zipcode.addEventListener('keyup', function(e) {
-        // If statement to make sure no duplicate requests happen
-        if (checkZip(location.zipcode.value) && zipcode !== location.zipcode.value) {
-          // Fetch zipcode API from Zippopotam.us
-          zipcode = location.zipcode.value;
-          fetch('http://api.zippopotam.us/us/' + location.zipcode.value)
-          .then (function(response) {
+    var zipcode;
+    location.zipcode.addEventListener('keyup', function(e) {
+      // If statement to make sure no duplicate requests happen
+      if (checkZip(location.zipcode.value) && zipcode !== location.zipcode.value) {
+        // Fetch zipcode API from Zippopotam.us
+        zipcode = location.zipcode.value;
+        fetch('http://api.zippopotam.us/us/' + location.zipcode.value)
+          .then(function(response) {
             if (response.ok) {
               return response.json();
             }
             throw Error('There is no data for the zip code ' + location.zipcode.value)
           })
-          .then (function(parsed_json) {
-            location.city.value = parsed_json.places[0] ["place name"];
-            location.state.value = parsed_json.places[0] ["state"];
+          .then(function(parsed_json) {
+            location.city.value = parsed_json.places[0]["place name"];
+            location.state.value = parsed_json.places[0]["state"];
             // Cool fade-in effect
             location.city.classList.add('fade-in');
             location.state.classList.add('fade-in');
           })
           // Do this when an error occurs
-          .catch (function(error) {
+          .catch(function(error) {
             location.city.value = '';
             location.state.value = '';
             location.city.classList.add('fade-in');
             location.state.classList.add('fade-in');
           });
-        }
-      });
-    }
+      }
+    });
   }
+
   // Listen for click events on confirm button and submit when clicked
   orderForm.confirmButton.addEventListener('click', function(event) {
     // Confirm the order form
@@ -231,47 +231,12 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   // NOTE: END OF JAVASCRIPT FOR CHECKOUT PAGE
 
+}); // end of DOMContentLoaded
+
 //Cart funtions
-//Local storage for item info
-var cartItems = localStorage.getItem('item-title', 'item-price', 'item-image', 'order-btn');
-
-cartItems.push(newItem);
-
-localStorage.setItem('item-title', 'item-price', 'item-image', 'order-btn', 'order-btn', cartItems);
-
-var cart = {};
-cart.products = [];
-
-localStorage.setItem('cart', JSON.stringify(cart));
-$('order-btn').on('click', function(e) {
-    var li = $(this).parent();
-
-    var quantity = $(li).find('input[type=text]').val();
-
-    // Ensure a valid quantity has been entered
-    if (!isValidInteger(quantity) === true) {
-        alert('Please enter a valid quantity');
-        return;
-    }
-
-    var cartItems = {};
-    product.title = $(li).attr('item-title');
-    product.image = $(li).attr('item-image');
-    product.price = $(li).attr('item-price');
-    product.quantity = quantity;
-
-    addToCart(product);
-});
-
-function addToCart(product) {
-    // Retrieve the cart object from local storage
-    if (localStorage && localStorage.getItem('cart')) {
-        var cart = JSON.parse(localStorage.getItem('cart'));
-
-        cart.products.push(product);
-
-        localStorage.setItem('cart', JSON.stringify(cart));
-    }
+if (document.querySelector('#cart-items')) {
+  var arrayCart = getCartItems('steap-cart');
+  // TODO: Display items from arrayCart
 }
 
 // JS: Displays and removes customization card
@@ -284,6 +249,26 @@ function Drink(name, sugar, ice, toppings) {
 }
 
 var drinkName = "";
+
+function storeCartItems(key, data) {
+  localStorage.setItem(key, JSON.stringify(data));
+}
+
+function getCartItems(key) {
+  if(Object.keys(localStorage).includes(key))
+    return JSON.parse(localStorage.getItem(key));
+  else {
+    var arrCart = [];
+    return arrCart;
+  }
+}
+
+function toggleCard() {
+  var card = document.querySelector('#overlay');
+  card.classList.toggle('visible');
+  var page = document.querySelector('body');
+  page.classList.toggle('disable-scroll');
+}
 
 // checks if current page is on menu
 if (document.querySelector('#drinks')) {
@@ -335,14 +320,12 @@ if (document.querySelector('#overlay')) {
       const ice = overlay.querySelector('.customize-card').elements['ice-level'].value;
       // create new drink
       var newItem = new Drink(drinkName,sugar,ice,toppings);
-      console.log(newItem);
+      // get array of cartItems
+      var arrayCart = getCartItems('steap-cart');
+      // push new Item to cart
+      arrayCart.push(newItem);
+      // push cart to localStorage
+      storeCartItems('steap-cart', arrayCart);
     } // exit card area
   });
-}
-
-function toggleCard() {
-  var card = document.querySelector('#overlay');
-  card.classList.toggle('visible');
-  var page = document.querySelector('body');
-  page.classList.toggle('disable-scroll');
 }
