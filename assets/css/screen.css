@@ -33,6 +33,7 @@ h1 {
   font-size: 3.333333em; /* 60px / 18px  = 2.25 */
   line-height: 1.5em;
   text-align: center;
+  font-weight: 100;
 }
 
 h2 {
@@ -160,24 +161,7 @@ p {
   position: absolute;
   bottom: 0;
 }
-/*remove button */
-.remove-btn {
-  background-color: #ffca3a;
-  border-radius: 1.5em;
-  margin-top: 3em;
-  padding: 0.5em 0.75em;
-  position: absolute;
-  bottom: 0;
-}
-/* checkout button */
-.checkout-btn {
-  background-color: #ffca3a;
-  border-radius: 1.5em;
-  margin-top: 3em;
-  padding: 0.5em 0.75em;
-  position: absolute;
-  bottom: 0;
-}
+
 /* item image */
 .item-image {
   display: block;
@@ -250,6 +234,7 @@ label {
   border-radius: 1.5em;
   padding: 0.25em 0.75em;
   text-align: center;
+  color: $color-label;
 }
 
 label:hover {
@@ -261,8 +246,8 @@ input:checked + label {
 }
 
 /* form input styling */
-input[type='checkbox'],
-input[type='radio'] {
+input[type="checkbox"],
+input[type="radio"] {
   opacity: 0;
   margin: 0;
 }
@@ -323,16 +308,16 @@ input[type='radio'] {
 @import "compass/css3";
 .group:before,
 .group:after {
-    content: '';
-    display: table;
+  content: "";
+  display: table;
 }
 
 .group:after {
-    clear: both;
+  clear: both;
 }
 
 .group {
-    zoom: 1;
+  zoom: 1;
 }
 
 /* Apply clearfix in a few places */
@@ -347,29 +332,17 @@ body {
   font-weight: 100;
 }
 
-h1 {
-  font-weight: 100;
-}
-
-label {
-  color: $color-label;
-}
-
 .shopping-cart {
-  margin-top: -45px;
+  margin-top: 15px;
 }
 
-.cartheading{
+.cartheading {
   display: f1ex;
   flex-direction: row;
   flex-wrap: wrap;
   margin-bottom: 0.5em;
   justify-content: left;
   -webkit-text-decoration-line: underline;
-}
-
-.shopping-cart {
-  margin-top: 15px;
 }
 
 /* Column headers */
@@ -392,7 +365,6 @@ label {
   float: left;
   width: 12%;
 }
-}
 
 .product-removal {
   text-align: auto;
@@ -405,7 +377,8 @@ label {
   padding: 0.5em 0.7em;
   width: 12%;
   text-align: right;
-  float: none;
+  float: right;
+  margin-bottom: -10px;
 }
 
 .product-quantity {
@@ -437,11 +410,6 @@ label {
   background-color: #a44;
 }
 
-.product-line-price {
-  float: right;
-  margin-bottom: -10px;
-}
-
 a.button {
   -webkit-appearance: button;
   -moz-appearance: button;
@@ -464,7 +432,7 @@ a.button {
 .product .product-price:before,
 .product .product-line-price:before,
 .totals-value:before {
-  content: '$';
+  content: "$";
 }
 
 /* Totals section */
@@ -486,7 +454,6 @@ a.button {
   float: right;
   width: 21%;
   text-align: right;
-}
 }
 
 .totals-item-total {
