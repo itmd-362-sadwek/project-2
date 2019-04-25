@@ -175,42 +175,38 @@ document.addEventListener('DOMContentLoaded', function() {
     location.zipcode.addEventListener('keyup', function(e) {
       // If statement to make sure no duplicate requests happen
       if (checkZip(location.zipcode.value) && zipcode !== location.zipcode.value) {
-        // Fetch zipcode API from Zippopotam.us
         zipcode = location.zipcode.value;
         fetch('http://api.zippopotam.us/us/' + location.zipcode.value)
-          .then(function(response) {
-            if (response.ok) {
-              return response.json();
-            }
-            throw Error('There is no data for the zip code ' + location.zipcode.value)
-          })
-          .then(function(parsed_json) {
-            location.city.value = parsed_json.places[0]["place name"];
-            location.state.value = parsed_json.places[0]["state"];
-            // Cool fade-in effect
-            location.city.classList.add('fade-in');
-            location.state.classList.add('fade-in');
-          })
-          // Do this when an error occurs
-          .catch(function(error) {
-            location.city.value = '';
-            location.state.value = '';
-            location.city.classList.add('fade-in');
-            location.state.classList.add('fade-in');
-          });
+        .then (function(response) {
+          if (response.ok) {
+            return response.json();
+          }
+          throw Error('There is no data for the zip code ' + location.zipcode.value)
+        })
+        .then (function(parsed_json) {
+          location.city.value = parsed_json.places[0] ["place name"];
+          location.state.value = parsed_json.places[0] ["state"];
+          location.city.classList.add('fade-in');
+          location.state.classList.add('fade-in');
+        })
+        // Do this when an error occurs
+        .catch (function(error) {
+          location.city.value = '';
+          location.state.value = '';
+          location.city.classList.add('fade-in');
+          location.state.classList.add('fade-in');
+        });
       }
     });
   }
-
   // Listen for click events on confirm button and submit when clicked
-  orderForm.confirmButton.addEventListener('click', function(event) {
+  order.confirmButton.addEventListener('click', function(event) {
     // Confirm the order form
     event.preventDefault();
-    orderForm.confirmButton.click();
+    order.confirmButton.click();
   });
-  // NOTE: END OF JAVASCRIPT FOR CHECKOUT PAGE
-
-}); // end of DOMContentLoaded
+}); // End of DOMContentLoaded
+// NOTE: END OF JAVASCRIPT FOR CHECKOUT PAGE
 
 //Cart funtions
 if (document.querySelector('#cart-items')) {
