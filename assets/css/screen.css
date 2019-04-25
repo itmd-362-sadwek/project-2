@@ -475,3 +475,23 @@ a.button {
 .checkout:hover {
   background-color: #494;
 }
+
+/* CSS for Checkout page */
+input[type="text"],
+input[for="contact"] {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 2em;
+  padding: 0.5em;
+}
+
+#confirm {
+  background-color: #ffca3a;
+  border-radius: 1.5em;
+  font-size: 1em;
+  margin-top: 1em;
+  padding: 0.5em 0.75em;
+  position: relative;
+  bottom: 0;
+}
+
