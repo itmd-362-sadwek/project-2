@@ -76,10 +76,58 @@ function removeItem(removeButton) {
   });
 }
 
+function getToppings(toppings) {
+  if (toppings.length == 0) {
+    return "No Toppings";
+  }
+  var strToppings = "Toppings: ";
+  var count = 0;
+  for (var choice of toppings) {
+    count++;
+    if (count > 1)
+      strToppings += ", ";
+    strToppings += choice;
+  }
+  return strToppings;
+}
+
 //Cart funtions
 if (document.querySelector('#cart-page')) {
   var arrayCart = getCartItems('steap-cart');
-  // TODO: Display items from arrayCart
+  var rootSection = document.querySelector('#cart-items');
+  var price = 0;
+  for (var i = 0; i < arrayCart.length; i++) {
+    var order = arrayCart[i];
+    // console.log(order.name);
+    var itemContainer = document.createElement('article');
+    var item =
+      `<p class="ordered-item">
+        <span class="order-name">` + order.name + `</span>
+        <span class="order-description">` + order.sugar + `% Sugar, ` + order.ice  + `</span>
+        <span class="order-toppings">` + getToppings(order.toppings) + `</span></p>
+      <p class="ordered-price">` + order.price + `</p>`;
+    itemContainer.innerHTML = item;
+    itemContainer.classList.add('order-item-container');
+    rootSection.appendChild(itemContainer);
+
+    // collect prices
+    // if (Number.isNaN(Number.parseFloat(order.price))) {
+      price += Number.parseFloat(order.price);
+      console.log("hi " + Number.parseFloat(order.price));
+    // }
+  }
+  if (arrayCart.length == 0) {
+    var msg = `<p id="empty-msg">No items in cart</p>`;
+    rootSection.innerHTML = msg;
+  }
+
+  // display total payment
+  var subtotal = document.querySelector('#subtotal-amt');
+  var tax = document.querySelector('#tax-amt');
+  var total = document.querySelector('#total-amt');
+  subtotal.innerHTML = price.toFixed(2);
+  tax.innerHTML = (price*0.05).toFixed(2);
+  total.innerHTML = (price + (price*0.05)).toFixed(2);
 }
 
 // NOTE: START OF JAVASCRIPT FOR CHECKOUT PAGE
@@ -139,6 +187,7 @@ $(document).ready(function() {
     $('main').hide(500);
     // Display a thank you message
     $('#msg').show(500);
+    localStorage.removeItem('steap-cart');
   });
 });
 
@@ -222,14 +271,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // JS: Displays and removes customization card
 
-function Drink(name, sugar, ice, toppings) {
+function Drink(name, sugar, ice, toppings, price) {
   this.name = name;
   this.sugar = sugar;
   this.ice = ice;
   this.toppings = toppings;
+  this.price = price;
 }
 
 var drinkName = "";
+var drinkPrice = "";
 
 function storeCartItems(key, data) {
   localStorage.setItem(key, JSON.stringify(data));
@@ -263,6 +314,7 @@ if (document.querySelector('#drinks')) {
       event.preventDefault();
       // reach for h3 text
       drinkName = button.parentElement.previousElementSibling.previousElementSibling.textContent;
+      drinkPrice = button.parentElement.previousElementSibling.firstElementChild.textContent;
       toggleCard();
     }
   });
@@ -300,7 +352,7 @@ if (document.querySelector('#overlay')) {
       const sugar = overlay.querySelector('.customize-card').elements['sugar-level'].value;
       const ice = overlay.querySelector('.customize-card').elements['ice-level'].value;
       // create new drink
-      var newItem = new Drink(drinkName,sugar,ice,toppings);
+      var newItem = new Drink(drinkName,sugar,ice,toppings,drinkPrice);
       // get array of cartItems
       var arrayCart = getCartItems('steap-cart');
       // push new Item to cart
