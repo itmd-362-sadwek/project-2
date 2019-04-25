@@ -131,7 +131,8 @@ p {
 }
 
 /* removes padding and border styling from p */
-.item-content p {
+.item-content p,
+#cart-page p {
   padding: 0;
   border: none;
 }
@@ -283,11 +284,52 @@ input[type="radio"] {
 
 /* Cart Styling */
 /* Apply dollar signs */
+/* 'article order-item-container'); */
+/* `<p class="ordered-item">
+  <span class="order-name">` + order.name + `</span>
+  <span class="order-description">` + order.sugar + `% Sugar, ` + order.ice  + `</span>
+  <span class="order-toppings">` + getToppings(order.toppings) + `</span></p>
+<p class="ordered-price">` */
+.order-item-container {
+  border-top: 0.1em solid #cadd64;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0.5em 0 0.5em 0;
+}
+
+.ordered-item {
+  display: block;
+  width: 80%;
+}
+
+.order-name,
+.order-description,
+.order-toppings {
+  display: block;
+}
+
+.order-description,
+.order-toppings {
+  color: grey;
+  font-size: 0.8888889em;
+  font-style: italic;
+}
+
+.ordered-price {
+  align-self: center;
+  color: #fa8771;
+  font-size: 1.25em;
+  font-weight: 300;
+  width: 15%;
+}
+
 #cart-summary {
   border-top: 0.1em solid #fa8771;
   display: flex;
-  padding-top: 1em;
   flex-direction: row;
+  justify-content: flex-end;
+  padding-top: 1em;
 }
 
 #summ-headers li,
@@ -296,29 +338,34 @@ input[type="radio"] {
 }
 
 #summ-headers {
-  /* background-color: pink; */
   margin-right: 2em;
   text-align: right;
-  width: 5em;
+  width: 80%;
 }
 
-#summ-values li::after {
+#summ-values {
+  width: 15%;
+}
+
+#summ-values li::before,
+.item-price::before,
+.ordered-price::before {
   content: "$";
-  /* background-color: yellow; */
 }
 
 #checkout-btn {
   border: 0;
-  margin-top: 1.111em; /* 20px / 18px = 1.111em */
-  padding: 0.333em 1.389em; /* 6px / 18px = 0.333em | 25px / 18px = 1.389em */
-  background-color: #6b6;
-  color: #fff;
+  background-color: #ffca3a;
+  display: block;
+  margin-top: 1em;
+  padding: 0.5em;
+  color: black;
   font-size: 1.389em; /* 25px / 18px = 1.389em */
-  border-radius: 0.167em; /* 3px / 18px = 0.167em */
+  border-radius: 1em;
 }
 
 #checkout-btn:hover {
-  background-color: #494;
+  background-color: #fa8771;
 }
 
 /* CSS for Checkout page */
