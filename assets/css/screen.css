@@ -281,38 +281,7 @@ input[type="radio"] {
   color: #f7f2da;
 }
 
-/* State Styles */
-@media screen and (min-width: 700px) {
-  .menu-list {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  .item-container {
-    display: flex;
-    flex-direction: column-reverse;
-    width: 45%;
-  }
-  .item-content {
-    margin: 0;
-    padding-top: 1em;
-  }
-  .order-btn {
-    position: relative;
-  }
-  .customize-card {
-    width: 60%;
-  }
-}
-@media screen and (min-width: 900px) {
-  .item-container {
-    /* display: block; */
-    width: 30%;
-  }
-}
-
-/*cart */
-/* Body/Header stuff */
-
+/* Cart Styling */
 /* Apply dollar signs */
 #cart-summary {
   border-top: 0.1em solid #fa8771;
@@ -336,40 +305,6 @@ input[type="radio"] {
 #summ-values li::after {
   content: "$";
   /* background-color: yellow; */
-}
-
-.remove-product {
-  border: 0;
-  padding: 0.222em 0.5em; /* 4px / 18px = 0.222em | 9px / 18px = 0.5em */
-  margin-top: 0.556em; /* 10px / 18px = 0.556em */
-  margin-bottom: 0.556em;
-  background-color: #c66;
-  color: #fff;
-  font-family: $font-bold;
-  font-size: 0.667em; /* 12px / 18px = 0.667em */
-  border-radius: 0.167em; /* 3px / 18px = 0.167em */
-}
-
-.remove-product:hover {
-  background-color: #a44;
-}
-
-/* Totals section */
-.label {
-  float: right;
-  clear: both;
-  width: 79%;
-  text-align: right;
-}
-
-.totals-value {
-  float: right;
-  width: 21%;
-  text-align: right;
-}
-
-.totals-item-total {
-  font-family: $font-bold;
 }
 
 #checkout-btn {
@@ -409,4 +344,67 @@ input[for="contact"] {
 #msg {
   display: none;
   padding: 1em;
+}
+
+/* State Styles */
+@media screen and (min-width: 700px) {
+  .menu-list {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .item-container {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 45%;
+  }
+  .item-content {
+    margin: 0;
+    padding-top: 1em;
+  }
+  .order-btn {
+    position: relative;
+  }
+  .customize-card {
+    width: 60%;
+  }
+}
+@media screen and (min-width: 900px) {
+  .item-container {
+    /* display: block; */
+    width: 30%;
+  }
+}
+
+.remove-product {
+  border: 0;
+  padding: 0.222em 0.5em; /* 4px / 18px = 0.222em | 9px / 18px = 0.5em */
+  margin-top: 0.556em; /* 10px / 18px = 0.556em */
+  margin-bottom: 0.556em;
+  background-color: #c66;
+  color: #fff;
+  font-family: $font-bold;
+  font-size: 0.667em; /* 12px / 18px = 0.667em */
+  border-radius: 0.167em; /* 3px / 18px = 0.167em */
+}
+
+.remove-product:hover {
+  background-color: #a44;
+}
+
+/* Totals section */
+.label {
+  float: right;
+  clear: both;
+  width: 79%;
+  text-align: right;
+}
+
+.totals-value {
+  float: right;
+  width: 21%;
+  text-align: right;
+}
+
+.totals-item-total {
+  font-family: $font-bold;
 }
