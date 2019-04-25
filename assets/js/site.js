@@ -134,30 +134,20 @@ function checkZip(value) {
 
 document.addEventListener('DOMContentLoaded', function() {
   // Link DOM elements
-  var order = {
-    orderForm: document.querySelector('#order-form'),
-    name: document.querySelector('#name'),
-    confirmButton: document.querySelector('#confirm'),
-    contact: document.querySelector('#contact')
-  };
+  var order = {};
+  var location = {};
 
-  var location = {
-    address: order.orderForm.querySelector('#addy'),
-    zipcode: order.orderForm.querySelector('#zip'),
-    city: order.orderForm.querySelector('#city'),
-    state: order.form.querySelector('#state')
-  };
+  // Order
+  order.form = document.querySelector('#order-form');
+  order.name = document.querySelector('#name');
+  order.contactInfo = document.querySelector('#contact');
+  order.confirmButton = document.querySelector('#confirm');
+  order.payment = document.querySelector('#payment');
 
-  // Focus on user landed input textboxes
-  name.addEventListener('focus', function(){});
-  contact.addEventListener('focus', function(){});
-  address.addEventListener('focus', function(){});
-  zipcode.addEventListener('focus', function(){});
-  city.addEventListener('focus', function(){});
-  state.addEventListener('focus', function(){});
-
-  // Disable submit button without a full 10-digit phone number
-  confirmButton.setAttribute('disabled', 'disabled');
+  location.address = order.form.querySelector('#addy');
+  location.zipcode = order.form.querySelector('#zip');
+  location.city = order.form.querySelector('#city');
+  location.state = order.form.querySelector('#state');
 
   // Listen for a keyup in entire form
   orderForm.addEventListener('keyup', function() {
