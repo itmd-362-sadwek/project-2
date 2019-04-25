@@ -3,11 +3,11 @@
 var html = document.querySelector('html');
 html.classList.remove('nojs');
 html.classList.add('js');
+
 /* Set rates + misc */
 var taxRate = 0.05;
 var shippingRate = 15.00;
 var fadeTime = 300;
-
 
 /* Assign actions */
 $('.product-quantity input').change( function() {
@@ -18,10 +18,8 @@ $('.product-removal button').click( function() {
   removeItem(this);
 });
 
-
 /* Recalculate cart */
-function recalculateCart()
-{
+function recalculateCart() {
   var subtotal = 0;
 
   /* Sum up row totals */
@@ -49,10 +47,8 @@ function recalculateCart()
   });
 }
 
-
 /* Update quantity */
-function updateQuantity(quantityInput)
-{
+function updateQuantity(quantityInput) {
   /* Calculate line price */
   var productRow = $(quantityInput).parent().parent();
   var price = parseFloat(productRow.children('.product-price').text());
@@ -69,16 +65,21 @@ function updateQuantity(quantityInput)
   });
 }
 
-
 /* Remove item from cart */
-function removeItem(removeButton)
-{
+function removeItem(removeButton) {
   /* Remove row from DOM and recalc cart total */
   var productRow = $(removeButton).parent().parent();
+  console.log(productRow);
   productRow.slideUp(fadeTime, function() {
     productRow.remove();
     recalculateCart();
   });
+}
+
+//Cart funtions
+if (document.querySelector('#cart-page')) {
+  var arrayCart = getCartItems('steap-cart');
+  // TODO: Display items from arrayCart
 }
 
 // NOTE: START OF JAVASCRIPT FOR CHECKOUT PAGE
@@ -142,86 +143,82 @@ $(document).ready(function() {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-  // Link DOM elements
-  var order = {};
-  var location = {};
+  if (document.querySelector('#order-form')) {
+    // Link DOM elements
+    var order = {};
+    var location = {};
 
-  // Order
-  order.form = document.querySelector('#order-form');
-  order.name = document.querySelector('#name');
-  order.contactInfo = document.querySelector('#contact');
-  order.confirmButton = document.querySelector('#confirm');
-  order.payment = document.querySelector('#payment');
+    // Order
+    order.form = document.querySelector('#order-form');
+    order.name = document.querySelector('#name');
+    order.contactInfo = document.querySelector('#contact');
+    order.confirmButton = document.querySelector('#confirm');
+    order.payment = document.querySelector('#payment');
 
-  location.address = order.form.querySelector('#addy');
-  location.zipcode = order.form.querySelector('#zip');
-  location.city = order.form.querySelector('#city');
-  location.state = order.form.querySelector('#state');
+    location.address = order.form.querySelector('#addy');
+    location.zipcode = order.form.querySelector('#zip');
+    location.city = order.form.querySelector('#city');
+    location.state = order.form.querySelector('#state');
 
-  // Listen for a keyup in entire form
-  order.form.addEventListener('keyup', function() {
-    var userContact = order.contactInfo.value;
-    // Check if user has entered phone # OR email
-    if (checkPhone(userContact) || checkEmail(userContact)) {
-      // Enable submit button if there is a correct phone number OR email
-      order.confirmButton.removeAttribute('disabled');
-    } else {
-      // Display error message
-      var err = document.querySelector('#err');
-      if (userContact.length > 10 && err.innerText.length === 0)
-      // Tell user to enter correct input
-      err.innerText = 'Please enter a ten-digit phone number or a valid email.';
-    }
-  });
-
-  // Check to see if the browser supports Fetch API
-  if ('fetch' in window) {
-    // Cool fade-out effect
-    location.city.classList.add('fade-out');
-    location.state.classList.add('fade-out');
-
-    var zipcode;
-    location.zipcode.addEventListener('keyup', function(e) {
-      // If statement to make sure no duplicate requests happen
-      if (checkZip(location.zipcode.value) && zipcode !== location.zipcode.value) {
-        zipcode = location.zipcode.value;
-        fetch('http://api.zippopotam.us/us/' + location.zipcode.value)
-        .then (function(response) {
-          if (response.ok) {
-            return response.json();
-          }
-          throw Error('There is no data for the zip code ' + location.zipcode.value)
-        })
-        .then (function(parsed_json) {
-          location.city.value = parsed_json.places[0] ["place name"];
-          location.state.value = parsed_json.places[0] ["state"];
-          location.city.classList.add('fade-in');
-          location.state.classList.add('fade-in');
-        })
-        // Do this when an error occurs
-        .catch (function(error) {
-          location.city.value = '';
-          location.state.value = '';
-          location.city.classList.add('fade-in');
-          location.state.classList.add('fade-in');
-        });
+    // Listen for a keyup in entire form
+    order.form.addEventListener('keyup', function() {
+      var userContact = order.contactInfo.value;
+      // Check if user has entered phone # OR email
+      if (checkPhone(userContact) || checkEmail(userContact)) {
+        // Enable submit button if there is a correct phone number OR email
+        order.confirmButton.removeAttribute('disabled');
+      } else {
+        // Display error message
+        var err = document.querySelector('#err');
+        if (userContact.length > 10 && err.innerText.length === 0)
+        // Tell user to enter correct input
+        err.innerText = 'Please enter a ten-digit phone number or a valid email.';
       }
     });
+
+    // Check to see if the browser supports Fetch API
+    if ('fetch' in window) {
+      // Cool fade-out effect
+      location.city.classList.add('fade-out');
+      location.state.classList.add('fade-out');
+
+      var zipcode;
+      location.zipcode.addEventListener('keyup', function(e) {
+        // If statement to make sure no duplicate requests happen
+        if (checkZip(location.zipcode.value) && zipcode !== location.zipcode.value) {
+          zipcode = location.zipcode.value;
+          fetch('http://api.zippopotam.us/us/' + location.zipcode.value)
+          .then (function(response) {
+            if (response.ok) {
+              return response.json();
+            }
+            throw Error('There is no data for the zip code ' + location.zipcode.value)
+          })
+          .then (function(parsed_json) {
+            location.city.value = parsed_json.places[0] ["place name"];
+            location.state.value = parsed_json.places[0] ["state"];
+            location.city.classList.add('fade-in');
+            location.state.classList.add('fade-in');
+          })
+          // Do this when an error occurs
+          .catch (function(error) {
+            location.city.value = '';
+            location.state.value = '';
+            location.city.classList.add('fade-in');
+            location.state.classList.add('fade-in');
+          });
+        }
+      });
+    }
+    // Listen for click events on confirm button and submit when clicked
+    order.confirmButton.addEventListener('click', function(event) {
+      // Confirm the order form
+      event.preventDefault();
+      order.confirmButton.click();
+    });
   }
-  // Listen for click events on confirm button and submit when clicked
-  order.confirmButton.addEventListener('click', function(event) {
-    // Confirm the order form
-    event.preventDefault();
-    order.confirmButton.click();
-  });
 }); // End of DOMContentLoaded
 // NOTE: END OF JAVASCRIPT FOR CHECKOUT PAGE
-
-//Cart funtions
-if (document.querySelector('#cart-items')) {
-  var arrayCart = getCartItems('steap-cart');
-  // TODO: Display items from arrayCart
-}
 
 // JS: Displays and removes customization card
 
