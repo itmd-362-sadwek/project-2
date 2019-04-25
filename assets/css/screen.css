@@ -372,7 +372,7 @@ input[type="radio"] {
   font-family: $font-bold;
 }
 
-.checkout {
+#checkout-btn {
   border: 0;
   margin-top: 1.111em; /* 20px / 18px = 1.111em */
   padding: 0.333em 1.389em; /* 6px / 18px = 0.333em | 25px / 18px = 1.389em */
@@ -382,7 +382,7 @@ input[type="radio"] {
   border-radius: 0.167em; /* 3px / 18px = 0.167em */
 }
 
-.checkout:hover {
+#checkout-btn:hover {
   background-color: #494;
 }
 
