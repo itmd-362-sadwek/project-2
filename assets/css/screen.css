@@ -307,41 +307,29 @@ input[type="radio"] {
 /*cart */
 /* Body/Header stuff */
 
-.shopping-cart {
-  margin-top: 0.833em; /* 15px / 18px = 0.833em */
-}
-
-.cartheading {
-  display: f1ex;
+/* Apply dollar signs */
+#cart-summary {
+  border-top: 0.1em solid #fa8771;
+  display: flex;
+  padding-top: 1em;
   flex-direction: row;
 }
 
-.product-price {
-  padding: 0.5em 0.7em;
-  text-align: right;
-  float: left;
-  width: 12%;
+#summ-headers li,
+#summ-values {
+  line-height: 1.5em;
 }
 
-.product-removal {
-  text-align: auto;
-  float: none;
-  padding: 0.5em 0.7em;
-  padding-bottom: 0.833em; /* 15px / 18px = 0.833em */
-}
-
-.product-line-price {
-  padding: 0.5em 0.7em;
-  width: 12%;
+#summ-headers {
+  /* background-color: pink; */
+  margin-right: 2em;
   text-align: right;
   width: 5em;
 }
 
-/* Product entries */
-.product {
-  margin-bottom: 1.111em; /* 20px / 18px = 1.111em */
-  padding-bottom: 0.556em; /* 10px / 18px = 0.556em */
-  border-bottom: 0.056em solid $color-border; /* 1px / 18px = 0.056em */
+#summ-values li::after {
+  content: "$";
+  /* background-color: yellow; */
 }
 
 .remove-product {
