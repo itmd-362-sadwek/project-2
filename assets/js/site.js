@@ -108,6 +108,10 @@ if (document.querySelector('#cart-page')) {
     itemContainer.innerHTML = item;
     rootSection.appendChild(itemContainer);
   }
+  if (arrayCart.length == 0) {
+    var msg = `<p id="empty-msg">No items in cart</p>`;
+    rootSection.innerHTML = msg;
+  }
 
   // removes items in localStorage
   document.querySelector('#checkout-btn').addEventListener('click',function(event){
