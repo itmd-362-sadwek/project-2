@@ -390,21 +390,3 @@ input[for="contact"] {
 .remove-product:hover {
   background-color: #a44;
 }
-
-/* Totals section */
-.label {
-  float: right;
-  clear: both;
-  width: 79%;
-  text-align: right;
-}
-
-.totals-value {
-  float: right;
-  width: 21%;
-  text-align: right;
-}
-
-.totals-item-total {
-  font-family: $font-bold;
-}
