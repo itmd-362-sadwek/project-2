@@ -88,7 +88,6 @@ function getToppings(toppings) {
       strToppings += ", ";
     strToppings += choice;
   }
-
   return strToppings;
 }
 
@@ -109,6 +108,11 @@ if (document.querySelector('#cart-page')) {
     itemContainer.innerHTML = item;
     rootSection.appendChild(itemContainer);
   }
+
+  // removes items in localStorage
+  document.querySelector('#checkout-btn').addEventListener('click',function(event){
+    localStorage.removeItem('steap-cart');
+  });
 }
 
 // NOTE: START OF JAVASCRIPT FOR CHECKOUT PAGE
