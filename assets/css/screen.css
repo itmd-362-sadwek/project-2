@@ -227,7 +227,7 @@ body.disable-scroll {
 }
 
 /* options */
-label {
+.customize-option label {
   background-color: rgba(255,255,255,0.7);
   border: 0.25em solid;
   border-color: white;
@@ -237,7 +237,7 @@ label {
   color: $color-label;
 }
 
-label:hover {
+.customize-option label:hover {
   border-color: #ffca3a;
 }
 
