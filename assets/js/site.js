@@ -106,17 +106,13 @@ if (document.querySelector('#cart-page')) {
         <span class="order-toppings">` + getToppings(order.toppings) + `</span></p>
       <p class="ordered-price">` + order.price + `</p>`;
     itemContainer.innerHTML = item;
+    itemContainer.classList.add('order-item-container');
     rootSection.appendChild(itemContainer);
   }
   if (arrayCart.length == 0) {
     var msg = `<p id="empty-msg">No items in cart</p>`;
     rootSection.innerHTML = msg;
   }
-
-  // removes items in localStorage
-  document.querySelector('#checkout-btn').addEventListener('click',function(event){
-    localStorage.removeItem('steap-cart');
-  });
 }
 
 // NOTE: START OF JAVASCRIPT FOR CHECKOUT PAGE
@@ -176,6 +172,7 @@ $(document).ready(function() {
     $('main').hide(500);
     // Display a thank you message
     $('#msg').show(500);
+    localStorage.removeItem('steap-cart');
   });
 });
 
