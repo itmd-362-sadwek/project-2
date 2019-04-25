@@ -305,33 +305,7 @@ input[type="radio"] {
 }
 
 /*cart */
-@import "compass/css3";
-.group:before,
-.group:after {
-  content: "";
-  display: table;
-}
-
-.group:after {
-  clear: both;
-}
-
-.group {
-  zoom: 1;
-}
-
-/* Apply clearfix in a few places */
-.shopping-cart, .column-labels, .product, .totals-item {
-  @extend .group;
-}
-
 /* Body/Header stuff */
-body {
-  /* 30px / 18px = 1.667em | 20px / 18px = 1.111em */
-  padding: 0 1.667em 1.667em 1.111em;
-  font-family: $font-default;
-  font-weight: 100;
-}
 
 .shopping-cart {
   margin-top: 0.833em; /* 15px / 18px = 0.833em */
@@ -340,24 +314,6 @@ body {
 .cartheading {
   display: f1ex;
   flex-direction: row;
-  flex-wrap: wrap;
-  margin-bottom: 0.5em;
-  justify-content: left;
-  -webkit-text-decoration-line: underline;
-}
-
-/* Column headers */
-.column-labels {
-  padding-bottom: 0.833em; /* 15px / 18px = 0.833em */
-  margin-bottom: 0.833em; /* 15px / 18px = 0.833em */
-  border-bottom: 0.056em solid $color-border; /* 1px / 18px = 0.056em */
-  padding: 0.5em 0.7em;
-}
-
-.product-image {
-  padding: 0.5em 0.7em;
-  float: left;
-  width: 20%;
 }
 
 .product-price {
@@ -378,14 +334,7 @@ body {
   padding: 0.5em 0.7em;
   width: 12%;
   text-align: right;
-  float: right;
-  margin-bottom: -0.556em; /* -10px / 18px = -0.556em */
-}
-
-.product-quantity {
-  padding: 0.5em 0.7em;
-  float: left;
-  width: 3.889em; /* 70px / 18px = 3.889em */
+  width: 5em;
 }
 
 /* Product entries */
@@ -411,39 +360,7 @@ body {
   background-color: #a44;
 }
 
-a.button {
-  -webkit-appearance: button;
-  -moz-appearance: button;
-  float: left;
-  border: 0;
-  padding: 0.333em 0.556em; /* 6px / 18px = 0.333em | 10px / 18px = 0.556em */
-  background-color: grey;
-  color: black;
-  font-size: 0.833em; /* 15px / 18px = 0.833em */
-  border-radius: 0.167em; /* 3px / 18px = 0.167em */
-  text-align: left;
-  padding-top: 0.278em; /* 5px / 18px = 0.278em */
-}
-
-.a button:hover {
-  background-color: #494;
-}
-
-/* Apply dollar signs */
-.product .product-price:before,
-.product .product-line-price:before,
-.totals-value:before {
-  content: "$";
-}
-
 /* Totals section */
-.totals-item {
-  float: right;
-  clear: both;
-  width: 100%;
-  text-align: right;
-}
-
 .label {
   float: right;
   clear: both;
@@ -462,7 +379,6 @@ a.button {
 }
 
 .checkout {
-  float: right;
   border: 0;
   margin-top: 1.111em; /* 20px / 18px = 1.111em */
   padding: 0.333em 1.389em; /* 6px / 18px = 0.333em | 25px / 18px = 1.389em */
