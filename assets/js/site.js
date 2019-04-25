@@ -95,6 +95,7 @@ function getToppings(toppings) {
 if (document.querySelector('#cart-page')) {
   var arrayCart = getCartItems('steap-cart');
   var rootSection = document.querySelector('#cart-items');
+  var price = 0;
   for (var i = 0; i < arrayCart.length; i++) {
     var order = arrayCart[i];
     // console.log(order.name);
@@ -108,11 +109,25 @@ if (document.querySelector('#cart-page')) {
     itemContainer.innerHTML = item;
     itemContainer.classList.add('order-item-container');
     rootSection.appendChild(itemContainer);
+
+    // collect prices
+    // if (Number.isNaN(Number.parseFloat(order.price))) {
+      price += Number.parseFloat(order.price);
+      console.log("hi " + Number.parseFloat(order.price));
+    // }
   }
   if (arrayCart.length == 0) {
     var msg = `<p id="empty-msg">No items in cart</p>`;
     rootSection.innerHTML = msg;
   }
+
+  // display total payment
+  var subtotal = document.querySelector('#subtotal-amt');
+  var tax = document.querySelector('#tax-amt');
+  var total = document.querySelector('#total-amt');
+  subtotal.innerHTML = price.toFixed(2);
+  tax.innerHTML = (price*0.05).toFixed(2);
+  total.innerHTML = (price + (price*0.05)).toFixed(2);
 }
 
 // NOTE: START OF JAVASCRIPT FOR CHECKOUT PAGE
