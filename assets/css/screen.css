@@ -495,3 +495,8 @@ input[for="contact"] {
   bottom: 0;
 }
 
+/* Hidden message after form submission */
+#msg {
+  display: none;
+  padding: 1em;
+}

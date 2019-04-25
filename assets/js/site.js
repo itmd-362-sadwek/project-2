@@ -132,6 +132,15 @@ function checkZip(value) {
   return validate(zipInput.length, eq, 5);
 }
 
+// jQuery Function to hide form after submission
+$(document).ready(function() {
+  $('#confirm').click(function() {
+    $('main').hide(500);
+    // Display a thank you message
+    $('#msg').show(500);
+  });
+});
+
 document.addEventListener('DOMContentLoaded', function() {
   // Link DOM elements
   var order = {};
