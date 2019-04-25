@@ -18,10 +18,8 @@ $('.product-removal button').click( function() {
   removeItem(this);
 });
 
-
 /* Recalculate cart */
-function recalculateCart()
-{
+function recalculateCart() {
   var subtotal = 0;
 
   /* Sum up row totals */
@@ -49,10 +47,8 @@ function recalculateCart()
   });
 }
 
-
 /* Update quantity */
-function updateQuantity(quantityInput)
-{
+function updateQuantity(quantityInput) {
   /* Calculate line price */
   var productRow = $(quantityInput).parent().parent();
   var price = parseFloat(productRow.children('.product-price').text());
@@ -69,16 +65,21 @@ function updateQuantity(quantityInput)
   });
 }
 
-
 /* Remove item from cart */
-function removeItem(removeButton)
-{
+function removeItem(removeButton) {
   /* Remove row from DOM and recalc cart total */
   var productRow = $(removeButton).parent().parent();
+  console.log(productRow);
   productRow.slideUp(fadeTime, function() {
     productRow.remove();
     recalculateCart();
   });
+}
+
+//Cart funtions
+if (document.querySelector('#cart-page')) {
+  var arrayCart = getCartItems('steap-cart');
+  // TODO: Display items from arrayCart
 }
 
 // NOTE: START OF JAVASCRIPT FOR CHECKOUT PAGE
@@ -218,12 +219,6 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 }); // End of DOMContentLoaded
 // NOTE: END OF JAVASCRIPT FOR CHECKOUT PAGE
-
-//Cart funtions
-if (document.querySelector('#cart-items')) {
-  var arrayCart = getCartItems('steap-cart');
-  // TODO: Display items from arrayCart
-}
 
 // JS: Displays and removes customization card
 
