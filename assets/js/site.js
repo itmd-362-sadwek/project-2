@@ -150,21 +150,19 @@ document.addEventListener('DOMContentLoaded', function() {
   location.state = order.form.querySelector('#state');
 
   // Listen for a keyup in entire form
-  orderForm.addEventListener('keyup', function() {
-    var userContact = contact.value;
-    var err;
-    // If statement to ensure user has typed in phone number OR email
+  order.form.addEventListener('keyup', function() {
+    var userContact = order.contactInfo.value;
+    // Check if user has entered phone # OR email
     if (checkPhone(userContact) || checkEmail(userContact)) {
       // Enable submit button if there is a correct phone number OR email
-      confirmButton.removeAttribute('disabled');
+      order.confirmButton.removeAttribute('disabled');
     } else {
-      err = document.querySelector('#err');
+      // Display error message
+      var err = document.querySelector('#err');
       if (userContact.length > 10 && err.innerText.length === 0)
-        // Tell user to enter correct input
-        err.innerText = 'Please enter a ten-digit phone number or a valid email.';
+      // Tell user to enter correct input
+      err.innerText = 'Please enter a ten-digit phone number or a valid email.';
     }
-    // Disable confirm button again due to invalid input from user
-    confirmButton.setAttribute('disabled', 'disabled');
   });
 
   // Check to see if the browser supports Fetch API
