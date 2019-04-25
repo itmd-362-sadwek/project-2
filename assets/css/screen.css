@@ -256,7 +256,12 @@ input[type="radio"] {
   margin-top: 2em;
 }
 
-#submit-drink {
+.exit-btn {
+  margin-top: 1em;
+}
+
+#submit-drink,
+#cancel-exit {
   background-color: #f7f2da;
   border-radius: 2em;
   padding: 0 0.5em 0.3em 0.5em;
@@ -270,7 +275,8 @@ input[type="radio"] {
   width: 100%;
 }
 
-#submit-drink:hover {
+#submit-drink:hover,
+#cancel-exit:hover {
   background-color: #cadd64;
   color: #f7f2da;
 }
