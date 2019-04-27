@@ -279,11 +279,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // JS: Displays and removes customization card
 
-function Drink(name, sugar, ice, toppings, price) {
+function Drink(category, name, sugar, ice, toppings, price) {
+  this.category = category;
   this.name = name;
   this.sugar = sugar;
   this.ice = ice;
   this.toppings = toppings;
+  this.price = price;
+}
+
+function Pastry(category, name, price) {
+  this.category = category;
+  this.name = name;
   this.price = price;
 }
 
