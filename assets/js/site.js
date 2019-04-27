@@ -395,14 +395,11 @@ if (document.querySelector('#overlay')) {
       // Get values of drinks
       const sugar = overlay.querySelector('.customize-card').elements['sugar-level'].value;
       const ice = overlay.querySelector('.customize-card').elements['ice-level'].value;
+      const type = 'drink';
       // create new drink
-      var newItem = new Drink(drinkName,sugar,ice,toppings,drinkPrice);
-      // get array of cartItems
-      var arrayCart = getCartItems('steap-cart');
-      // push new Item to cart
-      arrayCart.push(newItem);
-      // push cart to localStorage
-      storeCartItems('steap-cart', arrayCart);
+      var newItem = new Drink(type,drinkName,sugar,ice,toppings,drinkPrice);
+      // push item to localStorage
+      storeCartItems('steap-cart', newItem);
     } // exit card area
   });
 }
