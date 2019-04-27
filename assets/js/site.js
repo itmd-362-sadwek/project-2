@@ -98,14 +98,22 @@ if (document.querySelector('#cart-page')) {
   var price = 0;
   for (var i = 0; i < arrayCart.length; i++) {
     var order = arrayCart[i];
-    // console.log(order.name);
     var itemContainer = document.createElement('article');
-    var item =
-      `<p class="ordered-item">
-        <span class="order-name">` + order.name + `</span>
-        <span class="order-description">` + order.sugar + `% Sugar, ` + order.ice  + `</span>
-        <span class="order-toppings">` + getToppings(order.toppings) + `</span></p>
-      <p class="ordered-price">` + order.price + `</p>`;
+    if (order.category == 'drink') {
+      var item =
+        `<p class="ordered-item">
+          <span class="order-name">` + order.name + `</span>
+          <span class="order-description">` + order.sugar + `% Sugar, ` + order.ice  + `</span>
+          <span class="order-toppings">` + getToppings(order.toppings) + `</span></p>
+        <p class="ordered-price">` + order.price + `</p>`;
+    }
+    if (order.category == 'pastry') {
+      var item =
+        `<p class="ordered-item">
+          <span class="order-name">` + order.name + `</span>
+        <p class="ordered-price">` + order.price + `</p>`;
+    }
+    console.log(item);
     itemContainer.innerHTML = item;
     itemContainer.classList.add('order-item-container');
     rootSection.appendChild(itemContainer);
