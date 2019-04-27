@@ -322,6 +322,30 @@ function toggleCard() {
   page.classList.toggle('disable-scroll');
 }
 
+// checks if current page is on pastries
+if (document.querySelector('#pastries')) {
+  var pastryMenu = document.querySelector('#pastries');
+  // if there are any clicks happening inside drinksMenu
+  // check if it's from an add-to-order btn
+  pastryMenu.addEventListener('click',function(event){
+    // button = object that was clicked
+    var button = event.target;
+    if (button.className == 'order-btn'){
+      event.preventDefault();
+      // reach for h3 text
+      // console.log(button);
+      var pastryName = button.parentElement.previousElementSibling.previousElementSibling.textContent;
+      var pastryPrice = button.parentElement.previousElementSibling.firstElementChild.textContent;
+      const type = 'pastry';
+      // console.log(pastryName);
+      var newPastry = new Pastry(type, pastryName, pastryPrice);
+      console.log(newPastry);
+      // push item to localStorage
+      storeCartItems('steap-cart', newPastry);
+    }
+  });
+}
+
 // checks if current page is on menu
 if (document.querySelector('#drinks')) {
   var drinksMenu = document.querySelector('#drinks');
