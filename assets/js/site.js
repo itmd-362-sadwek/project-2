@@ -297,10 +297,6 @@ function Pastry(category, name, price) {
 var drinkName = "";
 var drinkPrice = "";
 
-function storeCartItems(key, data) {
-  localStorage.setItem(key, JSON.stringify(data));
-}
-
 function getCartItems(key) {
   if(Object.keys(localStorage).includes(key))
     return JSON.parse(localStorage.getItem(key));
@@ -308,6 +304,15 @@ function getCartItems(key) {
     var arrCart = [];
     return arrCart;
   }
+}
+
+function storeCartItems(key, item) {
+  // get array of cartItems
+  var arrayCart = getCartItems('steap-cart');
+  // push new Item to cart
+  arrayCart.push(item);
+  // push cart to localStorage
+  localStorage.setItem(key, JSON.stringify(arrayCart));
 }
 
 function toggleCard() {
