@@ -98,14 +98,22 @@ if (document.querySelector('#cart-page')) {
   var price = 0;
   for (var i = 0; i < arrayCart.length; i++) {
     var order = arrayCart[i];
-    // console.log(order.name);
     var itemContainer = document.createElement('article');
-    var item =
-      `<p class="ordered-item">
-        <span class="order-name">` + order.name + `</span>
-        <span class="order-description">` + order.sugar + `% Sugar, ` + order.ice  + `</span>
-        <span class="order-toppings">` + getToppings(order.toppings) + `</span></p>
-      <p class="ordered-price">` + order.price + `</p>`;
+    if (order.category == 'drink') {
+      var item =
+        `<p class="ordered-item">
+          <span class="order-name">` + order.name + `</span>
+          <span class="order-description">` + order.sugar + `% Sugar, ` + order.ice  + `</span>
+          <span class="order-toppings">` + getToppings(order.toppings) + `</span></p>
+        <p class="ordered-price">` + order.price + `</p>`;
+    }
+    if (order.category == 'pastry') {
+      var item =
+        `<p class="ordered-item">
+          <span class="order-name">` + order.name + `</span>
+        <p class="ordered-price">` + order.price + `</p>`;
+    }
+    console.log(item);
     itemContainer.innerHTML = item;
     itemContainer.classList.add('order-item-container');
     rootSection.appendChild(itemContainer);
@@ -271,7 +279,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // JS: Displays and removes customization card
 
-function Drink(name, sugar, ice, toppings, price) {
+function Drink(category, name, sugar, ice, toppings, price) {
+  this.category = category;
   this.name = name;
   this.sugar = sugar;
   this.ice = ice;
@@ -279,12 +288,14 @@ function Drink(name, sugar, ice, toppings, price) {
   this.price = price;
 }
 
+function Pastry(category, name, price) {
+  this.category = category;
+  this.name = name;
+  this.price = price;
+}
+
 var drinkName = "";
 var drinkPrice = "";
-
-function storeCartItems(key, data) {
-  localStorage.setItem(key, JSON.stringify(data));
-}
 
 function getCartItems(key) {
   if(Object.keys(localStorage).includes(key))
@@ -295,11 +306,44 @@ function getCartItems(key) {
   }
 }
 
+function storeCartItems(key, item) {
+  // get array of cartItems
+  var arrayCart = getCartItems('steap-cart');
+  // push new Item to cart
+  arrayCart.push(item);
+  // push cart to localStorage
+  localStorage.setItem(key, JSON.stringify(arrayCart));
+}
+
 function toggleCard() {
   var card = document.querySelector('#overlay');
   card.classList.toggle('visible');
   var page = document.querySelector('body');
   page.classList.toggle('disable-scroll');
+}
+
+// checks if current page is on pastries
+if (document.querySelector('#pastries')) {
+  var pastryMenu = document.querySelector('#pastries');
+  // if there are any clicks happening inside drinksMenu
+  // check if it's from an add-to-order btn
+  pastryMenu.addEventListener('click',function(event){
+    // button = object that was clicked
+    var button = event.target;
+    if (button.className == 'order-btn'){
+      event.preventDefault();
+      // reach for h3 text
+      // console.log(button);
+      var pastryName = button.parentElement.previousElementSibling.previousElementSibling.textContent;
+      var pastryPrice = button.parentElement.previousElementSibling.firstElementChild.textContent;
+      const type = 'pastry';
+      // console.log(pastryName);
+      var newPastry = new Pastry(type, pastryName, pastryPrice);
+      console.log(newPastry);
+      // push item to localStorage
+      storeCartItems('steap-cart', newPastry);
+    }
+  });
 }
 
 // checks if current page is on menu
@@ -351,14 +395,11 @@ if (document.querySelector('#overlay')) {
       // Get values of drinks
       const sugar = overlay.querySelector('.customize-card').elements['sugar-level'].value;
       const ice = overlay.querySelector('.customize-card').elements['ice-level'].value;
+      const type = 'drink';
       // create new drink
-      var newItem = new Drink(drinkName,sugar,ice,toppings,drinkPrice);
-      // get array of cartItems
-      var arrayCart = getCartItems('steap-cart');
-      // push new Item to cart
-      arrayCart.push(newItem);
-      // push cart to localStorage
-      storeCartItems('steap-cart', arrayCart);
+      var newItem = new Drink(type,drinkName,sugar,ice,toppings,drinkPrice);
+      // push item to localStorage
+      storeCartItems('steap-cart', newItem);
     } // exit card area
   });
 }

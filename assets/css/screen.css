@@ -112,7 +112,7 @@ p {
   display: grid;
   grid-template-columns: 2fr 3fr;
   grid-template-areas: "img content";
-  margin-bottom: 1em;
+  margin-bottom: 2em;
 }
 
 /* container for item information */
@@ -284,12 +284,6 @@ input[type="radio"] {
 
 /* Cart Styling */
 /* Apply dollar signs */
-/* 'article order-item-container'); */
-/* `<p class="ordered-item">
-  <span class="order-name">` + order.name + `</span>
-  <span class="order-description">` + order.sugar + `% Sugar, ` + order.ice  + `</span>
-  <span class="order-toppings">` + getToppings(order.toppings) + `</span></p>
-<p class="ordered-price">` */
 .order-item-container {
   border-top: 0.1em solid #cadd64;
   display: flex;
@@ -361,6 +355,7 @@ input[type="radio"] {
   padding: 0.5em;
   color: black;
   font-size: 1.389em; /* 25px / 18px = 1.389em */
+  text-align: center;
   border-radius: 1em;
 }
 
@@ -402,6 +397,7 @@ input[for="contact"] {
   .item-container {
     display: flex;
     flex-direction: column-reverse;
+    justify-content: flex-end;
     width: 45%;
   }
   .item-content {
@@ -415,25 +411,13 @@ input[for="contact"] {
     width: 60%;
   }
 }
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 1000px) {
   .item-container {
     /* display: block; */
     width: 30%;
   }
-}
-
-.remove-product {
-  border: 0;
-  padding: 0.222em 0.5em; /* 4px / 18px = 0.222em | 9px / 18px = 0.5em */
-  margin-top: 0.556em; /* 10px / 18px = 0.556em */
-  margin-bottom: 0.556em;
-  background-color: #c66;
-  color: #fff;
-  font-family: $font-bold;
-  font-size: 0.667em; /* 12px / 18px = 0.667em */
-  border-radius: 0.167em; /* 3px / 18px = 0.167em */
-}
-
-.remove-product:hover {
-  background-color: #a44;
+  html {
+    width: 70%;
+    margin: auto;
+  }
 }
