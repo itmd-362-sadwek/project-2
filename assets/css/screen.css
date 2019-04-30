@@ -371,6 +371,7 @@ input[for="contact"] {
   margin-bottom: 2em;
   padding: 0.5em;
   font-size: 0.8em;
+  width: 100%;
 }
 
 #confirm {
