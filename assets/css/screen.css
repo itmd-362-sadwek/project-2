@@ -437,6 +437,7 @@ input[for="contact"] {
     margin-right: 0.75em;
   }
 }
+
 @media screen and (min-width: 1000px) {
   .item-container {
     /* display: block; */
