@@ -375,13 +375,19 @@ input[for="contact"] {
 }
 
 #confirm {
+  border: 0;
   background-color: #ffca3a;
-  border-radius: 1.5em;
-  font-size: 1em;
+  display: block;
   margin-top: 1em;
-  padding: 0.5em 0.75em;
-  position: relative;
-  bottom: 0;
+  padding: 0.5em;
+  color: black;
+  font-size: 1.389em; /* 25px / 18px = 1.389em */
+  text-align: center;
+  border-radius: 1em;
+}
+
+#confirm:hover {
+  background-color: #fa8771;
 }
 
 /* Hidden message after form submission */
