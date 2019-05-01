@@ -451,6 +451,11 @@ input[for="contact"] {
     /* display: block; */
     width: 30%;
   }
+
+  #state-area {
+    margin-left: 20em;
+  }
+
   html {
     width: 70%;
     margin: auto;
