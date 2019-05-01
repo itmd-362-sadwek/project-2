@@ -392,6 +392,10 @@ if (document.querySelector('#overlay')) {
         }
       } // end for loop
 
+    if (areaClicked == overlay.querySelector('#cancel-exit')) {
+      toggleCard();
+    }
+
       // Get values of drinks
       const sugar = overlay.querySelector('.customize-card').elements['sugar-level'].value;
       const ice = overlay.querySelector('.customize-card').elements['ice-level'].value;
